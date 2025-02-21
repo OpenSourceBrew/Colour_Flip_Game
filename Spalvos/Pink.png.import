@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu4dbf8wo1etv"
-path="res://.godot/imported/cooltext475992678428394.png-36aeef2d0e47879199a953e67fc77e87.ctex"
+uid="uid://jsb77cwg6qt8"
+path="res://.godot/imported/Pink.png-7ae7ece50867553bc41110cd3278a375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/cooltext475992678428394.png"
-dest_files=["res://.godot/imported/cooltext475992678428394.png-36aeef2d0e47879199a953e67fc77e87.ctex"]
+source_file="res://Spalvos/Pink.png"
+dest_files=["res://.godot/imported/Pink.png-7ae7ece50867553bc41110cd3278a375.ctex"]
 
 [params]
 
