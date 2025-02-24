@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1vp6autpitw6"]
+[gd_scene load_steps=9 format=3 uid="uid://c1vp6autpitw6"]
 
 [ext_resource type="Script" path="res://Veikėjas/PagrindinisVeikėjas.cs" id="1_gvjqm"]
-[ext_resource type="Texture2D" uid="uid://lf13kkcf7j23" path="res://Veikėjas/2 Owlet_Monster/Owlet_Monster.png" id="1_khjfv"]
+[ext_resource type="Texture2D" uid="uid://csvt6f1mo6rli" path="res://Veikėjas/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="2_qkn3m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikuu5"]
+atlas = ExtResource("2_qkn3m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r8bi"]
+atlas = ExtResource("2_qkn3m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yeq61"]
+atlas = ExtResource("2_qkn3m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04d7v"]
+atlas = ExtResource("2_qkn3m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_df0aj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikuu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r8bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yeq61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04d7v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d77o"]
 size = Vector2(46, 53)
@@ -9,11 +45,13 @@ size = Vector2(46, 53)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_gvjqm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(45.5, 41.25)
+position = Vector2(46.5, 41.25)
 scale = Vector2(2.21875, 2.04687)
-texture = ExtResource("1_khjfv")
+sprite_frames = SubResource("SpriteFrames_df0aj")
+autoplay = "default"
+frame_progress = 0.767233
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(40, 47.5)
