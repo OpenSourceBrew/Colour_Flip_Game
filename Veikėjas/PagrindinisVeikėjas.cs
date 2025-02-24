@@ -3,13 +3,28 @@ using System;
 
 public partial class PagrindinisVeikėjas : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	public const float Speed = 200.0f;
 	public const float JumpVelocity = -400.0f;
-
+	
+	private AnimatedSprite2D sprite2d;
+	
+	public override void _Ready()
+	{
+		sprite2d = GetNode<AnimatedSprite2D>("Sprite2D");
+		GD.Print(sprite2d);
+	}
+	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-
+		
+		if (!IsOnFloor()) {
+			velocity.Y += gravity * (float)delta;
+			sprite2d.Animation = "jumping";
+		}
+		else
+			sprite2d.Animation = "default";
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
@@ -28,6 +43,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
+			
 		}
 		else
 		{
@@ -35,6 +51,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		MoveAndSlide();
+		MoveAndSlide(); 
 	}
 }
