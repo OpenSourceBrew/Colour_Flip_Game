@@ -4,7 +4,7 @@ using System;
 public partial class PagrindinisVeikėjas : CharacterBody2D
 {
 	private const float SPEED = 150.0f;
-	private const float JUMP_VELOCITY = -600.0f;
+	private const float JUMP_VELOCITY = -650.0f;
 	private int gravity = 2500;
 	private int gravityDirection = 1;
 	private const float FRICTION = 1000.0f;
