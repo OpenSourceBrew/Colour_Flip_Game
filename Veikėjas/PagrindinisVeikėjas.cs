@@ -3,38 +3,65 @@ using System;
 
 public partial class PagrindinisVeikėjas : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	private const float SPEED = 150.0f;
+	private const float JUMP_VELOCITY = -600.0f;
+	private int gravity = 2500;
+	private int gravityDirection = 1;
+	private const float FRICTION = 1000.0f;
+
+	private AnimatedSprite2D sprite2D;
+
+	public override void _Ready()
+	{
+		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
-
-		// Add the gravity.
-		if (!IsOnFloor())
+		// Apply gravity
+		if (!IsOnFloor() && gravityDirection == 1)
+		Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
+		else if (!IsOnCeiling() && gravityDirection == -1)
+		Velocity = new Vector2(Velocity.X, Velocity.Y - gravity * (float)delta);
+		
+		// Jumping
+		if (Input.IsActionJustPressed("jump") && 
+		((gravityDirection == 1 && IsOnFloor()) || (gravityDirection == -1 && IsOnCeiling())))
 		{
-			velocity += GetGravity() * (float)delta;
+			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY * gravityDirection);
 		}
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		
+		// Gravity Change
+		if (Input.IsActionJustPressed("gravityChange"))
 		{
-			velocity.Y = JumpVelocity;
+			gravityDirection *= -1;
+			sprite2D.FlipV = (gravityDirection == -1);
 		}
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
+			
+		// Movement with Friction
+		float direction = Input.GetAxis("left", "right");
+		if (direction != 0)
+			Velocity = new Vector2(direction * SPEED, Velocity.Y);
 		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
+			Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, FRICTION * (float)delta), Velocity.Y);
 
-		Velocity = velocity;
+		// **Call MoveAndSlide() Correctly**
 		MoveAndSlide();
+		
+		sprite2D.FlipH = Velocity.X < 0;
+		
+		// **Corrected Animation Handling**
+		if (!IsOnFloor()) // Character is in the air
+		{
+			sprite2D.Play("jumping");
+		}
+		else if (Math.Abs(Velocity.X) > 1) // Character is running
+		{
+			sprite2D.Play("walking");
+		}
+		else // Character is idle
+		{
+			sprite2D.Play("default");
+		}
 	}
 }
