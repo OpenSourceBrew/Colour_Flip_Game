@@ -3,8 +3,13 @@ using System;
 
 public partial class MainCharacter : CharacterBody2D
 {
+<<<<<<< Updated upstream:Pagrindinis_veikėjas/MainCharacter.cs
 	private const float SPEED = 300.0f;
 	private const float JUMP_VELOCITY = -800.0f;
+=======
+	private const float SPEED = 150.0f;
+	private const float JUMP_VELOCITY = -700.0f;
+>>>>>>> Stashed changes:Veikėjas/PagrindinisVeikėjas.cs
 	private int gravity = 2500;
 	private int gravityDirection = 1;
 	private const float FRICTION = 1000.0f;
@@ -14,6 +19,7 @@ public partial class MainCharacter : CharacterBody2D
 	public override void _Ready()
 	{
 		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
+		sprite2D.Play("default");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -30,6 +36,7 @@ public partial class MainCharacter : CharacterBody2D
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY * gravityDirection);
 		}
+		
 		
 		// Gravity Change
 		if (Input.IsActionJustPressed("gravityChange"))
