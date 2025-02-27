@@ -103,5 +103,5 @@ animation = &"jumping"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43, 48)
+position = Vector2(51, 48)
 shape = SubResource("CapsuleShape2D_0yjyg")
