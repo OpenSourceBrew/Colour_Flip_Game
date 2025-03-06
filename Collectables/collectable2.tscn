@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddixm1ali0eqb"]
+[gd_scene load_steps=7 format=3 uid="uid://ddixm1ali0eqb"]
 
 [ext_resource type="Script" path="res://Collectables/Collectable.cs" id="1_oh1jb"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_jvem6"]
+[ext_resource type="AudioStream" uid="uid://ch6jlxwlg8em6" path="res://Muzika/zapsplat_multimedia_game_sound_coin_collect_bonus_win_113262.mp3" id="3_e8eat"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2j5km"]
 atlas = ExtResource("2_jvem6")
@@ -31,5 +32,9 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nddlj")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e8eat")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
