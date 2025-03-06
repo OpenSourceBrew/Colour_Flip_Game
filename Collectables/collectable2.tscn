@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddixm1ali0eqb"]
+
+[ext_resource type="Script" path="res://Collectables/Collectable.cs" id="1_oh1jb"]
+[ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_jvem6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j5km"]
+atlas = ExtResource("2_jvem6")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifapy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j5km")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nddlj"]
+radius = 8.06226
+
+[node name="Collectable" type="Area2D"]
+script = ExtResource("1_oh1jb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ifapy")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nddlj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
