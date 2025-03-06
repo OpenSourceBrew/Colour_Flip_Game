@@ -141,8 +141,18 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(296, -6)
-offset = Vector2(-20, -10)
-zoom = Vector2(2, 2)
+offset = Vector2(0, 12)
+zoom = Vector2(3.2, 3.2)
+limit_left = -50
+limit_top = 0
+limit_right = 575
+limit_bottom = 324
+
+[node name="Collectable" parent="." instance=ExtResource("4_qbfma")]
+position = Vector2(218, 112)
+
+[node name="Collectable2" parent="." instance=ExtResource("4_qbfma")]
+position = Vector2(152, 159)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -155,21 +165,16 @@ anchor_bottom = 0.138889
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PointsLabel" type="Label" parent="UI/Panel"]
+[node name="InfoLabel" type="Label" parent="UI/Panel"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4.57764e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-text = "Points: 0"
+text = "Points: 0
+Level: 1"
 horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Collectable" parent="." instance=ExtResource("4_qbfma")]
-position = Vector2(218, 112)
-
-[node name="Collectable2" parent="." instance=ExtResource("4_qbfma")]
-position = Vector2(152, 159)

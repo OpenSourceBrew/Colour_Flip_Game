@@ -198,8 +198,12 @@ safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(45, 50)
-offset = Vector2(350, 50)
-zoom = Vector2(1.1, 1.1)
+offset = Vector2(150, -90)
+zoom = Vector2(1.5, 1.5)
+limit_left = -190
+limit_top = 45
+limit_right = 1600
+limit_bottom = 685
 
 [node name="Collectable" parent="." instance=ExtResource("4_pavvw")]
 position = Vector2(369, 282)
@@ -218,7 +222,7 @@ offset_top = 14.0
 offset_right = 262.0
 offset_bottom = 139.0
 
-[node name="PointsLabel" type="Label" parent="UI/Panel"]
+[node name="InfoLabel" type="Label" parent="UI/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -226,6 +230,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-text = "Points: 0"
+text = "Points: 0
+Level: 1"
 horizontal_alignment = 1
-vertical_alignment = 1
