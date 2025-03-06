@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=7 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_8jcmc"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_xl0rj"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="3_341lg"]
+[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="4_qbfma"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc63r"]
 texture = ExtResource("2_xl0rj")
@@ -121,7 +122,7 @@ texture = ExtResource("2_xl0rj")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fc63r")
 
-[node name="Antras" type="Node2D"]
+[node name="Node2" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -140,4 +141,35 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(296, -6)
-zoom = Vector2(3.295, 3.295)
+offset = Vector2(-20, -10)
+zoom = Vector2(2, 2)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = 0.0324074
+anchor_right = 0.122396
+anchor_bottom = 0.138889
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PointsLabel" type="Label" parent="UI/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collectable" parent="." instance=ExtResource("4_qbfma")]
+position = Vector2(218, 112)
+
+[node name="Collectable2" parent="." instance=ExtResource("4_qbfma")]
+position = Vector2(152, 159)

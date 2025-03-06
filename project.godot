@@ -15,6 +15,10 @@ run/main_scene="res://Lygių_dizainai/Trečias_Lygis/Trecias.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://GameManager/GameManager.cs"
+
 [display]
 
 window/size/initial_position_type=0

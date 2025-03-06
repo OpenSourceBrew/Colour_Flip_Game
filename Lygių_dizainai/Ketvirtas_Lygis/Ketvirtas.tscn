@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx0t57rlxkfaj"]
+[gd_scene load_steps=11 format=3 uid="uid://isqwjhwvmn81"]
 
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_dmurw"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="2_4csdq"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_yrt22"]
 [ext_resource type="Texture2D" uid="uid://d3aq4hvwidrm2" path="res://Blokai/images.jpg" id="4_75iua"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="4_t3c46"]
+[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="6_1v877"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8bwt"]
 texture = ExtResource("3_yrt22")
@@ -459,7 +460,7 @@ sources/0 = SubResource("TileSetAtlasSource_a8bwt")
 sources/1 = SubResource("TileSetAtlasSource_7tvf2")
 sources/3 = SubResource("TileSetAtlasSource_ucjky")
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -481,3 +482,29 @@ position = Vector2(14, 532)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(44, 50)
+
+[node name="Collectable" parent="." instance=ExtResource("6_1v877")]
+position = Vector2(149, 538)
+
+[node name="Collectable2" parent="." instance=ExtResource("6_1v877")]
+position = Vector2(221, 473)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 262.0
+offset_bottom = 139.0
+
+[node name="PointsLabel" type="Label" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
