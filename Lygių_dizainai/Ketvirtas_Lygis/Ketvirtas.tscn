@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://isqwjhwvmn81"]
+[gd_scene load_steps=13 format=3 uid="uid://isqwjhwvmn81"]
 
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_dmurw"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="2_4csdq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d3aq4hvwidrm2" path="res://Blokai/images.jpg" id="4_75iua"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="4_t3c46"]
 [ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="6_1v877"]
+[ext_resource type="AudioStream" uid="uid://coefnjmhub3ej" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="6_7kafq"]
+[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_vdslv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8bwt"]
 texture = ExtResource("3_yrt22")
@@ -489,6 +491,17 @@ limit_left = -150
 limit_top = 0
 limit_right = 1160
 limit_bottom = 750
+
+[node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("6_7kafq")
+volume_db = -16.0
+pitch_scale = 1.5
+autoplay = true
+parameters/looping = true
+
+[node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("7_vdslv")
+volume_db = -16.0
 
 [node name="Collectable" parent="." instance=ExtResource("6_1v877")]
 position = Vector2(149, 538)

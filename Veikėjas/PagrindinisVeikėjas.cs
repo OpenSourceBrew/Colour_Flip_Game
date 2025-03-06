@@ -10,10 +10,15 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	private const float FRICTION = 1000.0f;
 	
 	private AnimatedSprite2D sprite2D;
+	private AudioStreamPlayer walkingAudio;
+	private AudioStreamPlayer jumpingAudio;
+	
 
 	public override void _Ready()
 	{
 		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
+		walkingAudio = GetNode<AudioStreamPlayer>("WalkingAudio");
+		jumpingAudio = GetNode<AudioStreamPlayer>("JumpingAudio");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -29,6 +34,11 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		((gravityDirection == 1 && IsOnFloor()) || (gravityDirection == -1 && IsOnCeiling())))
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY * gravityDirection);
+			// **Play walking sound only if not already playing**
+			if (!jumpingAudio.Playing)
+			{
+				jumpingAudio.Play();
+			}
 		}
 		
 		// Gravity Change
@@ -41,10 +51,26 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		// Movement with Friction
 		float direction = Input.GetAxis("left", "right");
 		if (direction != 0)
+		{
 			Velocity = new Vector2(direction * SPEED, Velocity.Y);
+			
+			// **Play walking sound only if not already playing**
+			if (!walkingAudio.Playing)
+			{
+				walkingAudio.Play();
+			}
+		}
 		else
+		{
 			Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, FRICTION * (float)delta), Velocity.Y);
-
+			
+			// **Stop walking sound when idle**
+			if (walkingAudio.Playing)
+			{
+				walkingAudio.Stop();
+			}
+		}
+		
 		// **Call MoveAndSlide() Correctly**
 		MoveAndSlide();
 		
@@ -57,7 +83,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		}
 		else if (Math.Abs(Velocity.X) > 1) // Character is running
 		{
-			sprite2D.Play("walking");
+			sprite2D.Play("walking");;
 		}
 		else // Character is idle
 		{
