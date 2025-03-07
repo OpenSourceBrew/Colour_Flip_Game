@@ -176,16 +176,15 @@ sources/1 = SubResource("TileSetAtlasSource_ttaig")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-anchors_preset = -1
-anchor_left = -0.0355903
-anchor_top = -0.0632716
-anchor_right = 1.51823
-anchor_bottom = 1.05401
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 592.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_1blib")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-45, -290)

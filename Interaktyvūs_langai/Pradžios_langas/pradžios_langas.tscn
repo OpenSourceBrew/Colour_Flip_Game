@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2lutj5rdsxmb"]
+
+[ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="1_ew1l4"]
+[ext_resource type="Script" path="res://Interaktyvūs_langai/Pradžios_langas/PradžiosLangas.cs" id="1_q1dyw"]
+[ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="2_fs3mq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phddv"]
+texture = ExtResource("1_ew1l4")
+modulate_color = Color(0.344076, 0.344076, 0.344076, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgcqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grb7a"]
+bg_color = Color(0.2692, 0.32135, 0.507908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xqt"]
+bg_color = Color(0.166755, 0.203712, 0.337551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exmp5"]
+bg_color = Color(0.450741, 0.51468, 0.729524, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[node name="PradžiosLangas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q1dyw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_phddv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -108.5
+offset_right = 181.5
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("2_fs3mq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qgcqa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_grb7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_21xqt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_exmp5")
+text = "Pradėti žaidimą"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("2_fs3mq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qgcqa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_grb7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_21xqt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_exmp5")
+text = "Nustatymai"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("2_fs3mq")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qgcqa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_grb7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_21xqt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_exmp5")
+text = "Išeiti"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -182.0
+offset_right = 66.5
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
+theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
+theme_override_fonts/font = ExtResource("2_fs3mq")
+theme_override_font_sizes/font_size = 60
+text = "Colour Flip Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_pradeti_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_nustatymai_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_iseiti_pressed"]
