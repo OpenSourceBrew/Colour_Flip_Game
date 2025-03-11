@@ -153,12 +153,12 @@ animations = [{
 radius = 16.0
 height = 54.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_gvjqm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(46.5, 39.5)
+position = Vector2(48, 40)
 scale = Vector2(2.21875, 2.15625)
 sprite_frames = SubResource("SpriteFrames_df0aj")
 

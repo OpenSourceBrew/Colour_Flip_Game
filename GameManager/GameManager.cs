@@ -9,20 +9,20 @@ public partial class GameManager : Node
 	private int score = 0;
 	private int currentLevel = 1;  // Start at Level 1
 	private int totalLevels = 4;   // Total number of levels
-	
+
 	public override void _Ready()
 	{
-		//infoLabel = GetNodeOrNull<Label>("/root/Node2/UI/Panel/InfoLabel");
 		if (Instance == null)
 		{
 			Instance = this;
+			AddChild(this);
 		}
 		else
 		{
 			QueueFree(); // Prevent duplicate instances
 			return;
 		}
-		// Get background music node
+		
 		backgroundMusic = GetNodeOrNull<AudioStreamPlayer>("/root/Node2/BackgroundMusic");
 		
 		if (backgroundMusic != null && !backgroundMusic.Playing)
@@ -33,38 +33,36 @@ public partial class GameManager : Node
 		{
 			GD.PrintErr("ERROR: BackgroundMusic node not found!");
 		}
+		
 		infoLabel = GetNodeOrNull<Label>("/root/Node2/UI/Panel/InfoLabel");
 		UpdateLevelLabel();
 	}
+
 	public void AddPoint()
 	{
 		score++;
-		UpdateLevelLabel(); // Update UI after scoring
+		UpdateLevelLabel();
 	}
+
 	public void NextLevel()
 	{
 		if (currentLevel < totalLevels)
 		{
 			currentLevel++;
-			
-			// Change music if needed
 			ChangeMusicForLevel(currentLevel);
-			
 			UpdateLevelLabel();
-			// Load next level without resetting music
-			GetTree().ChangeSceneToPacked(ResourceLoader.Load<PackedScene>($"res://Levels/Level{currentLevel}.tscn"));
+			GetTree().CallDeferred("ChangeSceneToFile", $"res://Levels/Level{currentLevel}.tscn");
 		}
 		else
 		{
 			GD.Print("Game Completed!");
-			// Optionally, load a "You Win" screen
 			GetTree().ChangeSceneToFile("res://Levels/VictoryScreen.tscn");
 		}
 	}
 	
 	private void UpdateLevelLabel()
 	{
-		if (infoLabel != null)
+		if (IsInstanceValid(infoLabel))
 		{
 			infoLabel.Text = $"Points: {score}\nLevel: {currentLevel}/{totalLevels}";
 		}
@@ -73,7 +71,19 @@ public partial class GameManager : Node
 			GD.PrintErr("ERROR: infoLabel not found!");
 		}
 	}
-	//private void ChangeMusicForLevel(int level)
+
+	private void ChangeMusicForLevel(int level)
+	{
+		string musicPath = "res://Muzika/zapsplat_fantasy_psychic_light_bright_shimmering_magical_104509.mp3";
+		
+		if (ResourceLoader.Exists(musicPath) && IsInstanceValid(backgroundMusic))
+		{
+			backgroundMusic.Stream = (AudioStream)GD.Load(musicPath);
+			backgroundMusic.Play();
+		}
+	}
+}
+//private void ChangeMusicForLevel(int level)
 	//{
 		////  Use a dictionary to set different music for each level
 		//var levelMusic = new Dictionary<int, string>
@@ -95,14 +105,3 @@ public partial class GameManager : Node
 			//GD.PrintErr($"ERROR: Music file not found for Level {level}");
 		//}
 	//}
-	private void ChangeMusicForLevel(int level)
-	{
-		string musicPath = $"res://Muzika/zapsplat_fantasy_psychic_light_bright_shimmering_magical_104509.mp3";
-		
-		if (ResourceLoader.Exists(musicPath))
-		{
-			backgroundMusic.Stream = (AudioStream)GD.Load(musicPath);
-			backgroundMusic.Play();
-		}
-	}
-}
