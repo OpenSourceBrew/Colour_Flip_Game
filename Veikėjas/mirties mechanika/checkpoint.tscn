@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgk0qw2svy8u8"]
+
+[ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint.gd" id="1_3jqmx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcxs2"]
+size = Vector2(20, 95)
+
+[node name="Checkpoint" type="Area2D"]
+script = ExtResource("1_3jqmx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 38)
+shape = SubResource("RectangleShape2D_wcxs2")
+
+[node name="RespawnPoint" type="Marker2D" parent="."]
+position = Vector2(-11, 26)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
