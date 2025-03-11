@@ -1,7 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_8jcmc"]
-[ext_resource type="Script" path="res://Lygių_dizainai/Antras_Lygis/antras.gd" id="1_p6fsf"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_xl0rj"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="3_341lg"]
 [ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="4_qbfma"]
@@ -10,6 +9,21 @@
 [ext_resource type="Script" path="res://Veikėjas/mirties mechanika/DeathZone.gd" id="8_64313"]
 [ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint_manager.gd" id="9_omk51"]
 [ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="10_4y075"]
+
+[sub_resource type="GDScript" id="GDScript_5bih4"]
+script/source = "extends Node
+
+@export var level_start_pos : Node2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc63r"]
 texture = ExtResource("2_xl0rj")
@@ -132,7 +146,7 @@ sources/0 = SubResource("TileSetAtlasSource_fc63r")
 size = Vector2(84, 43)
 
 [node name="Node2" type="Node"]
-script = ExtResource("1_p6fsf")
+script = SubResource("GDScript_5bih4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
