@@ -13,6 +13,8 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	private AudioStreamPlayer walkingAudio;
 	private AudioStreamPlayer jumpingAudio;
 	
+	private bool can_control = true;
+	
 
 	public override void _Ready()
 	{
@@ -23,6 +25,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
 		// Apply gravity
 		if (!IsOnFloor() && gravityDirection == 1)
 		Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
@@ -90,4 +93,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 			sprite2D.Play("default");
 		}
 	}
+	
+	
 }
