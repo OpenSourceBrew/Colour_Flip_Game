@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://isqwjhwvmn81"]
+[gd_scene load_steps=16 format=3 uid="uid://isqwjhwvmn81"]
 
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_yltbw"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="2_pv4le"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://coefnjmhub3ej" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="7_7vaae"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="8_2cpmr"]
 [ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="9_155pi"]
+[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_ivlj7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8bwt"]
 texture = ExtResource("2_pv4le")
@@ -561,3 +562,7 @@ theme_override_font_sizes/font_size = 25
 text = "Points: 0
 Level: 1"
 horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("10_ivlj7")]

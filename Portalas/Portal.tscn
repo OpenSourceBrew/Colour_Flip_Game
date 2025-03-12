@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b55l5h6pxn2qm"]
 
+[ext_resource type="Script" path="res://Portalas/Portal.cs" id="1_kvaub"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="1_o2vqw"]
-[ext_resource type="Script" path="res://Portalas/portal.gd" id="1_su857"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k42j4"]
 radius = 23.0217
@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [node name="Portal" type="Area2D"]
-script = ExtResource("1_su857")
+script = ExtResource("1_kvaub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(31, 28)
