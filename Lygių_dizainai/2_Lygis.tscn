@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=12 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_dpe1x"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_iee36"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://coefnjmhub3ej" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="5_mx4ax"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="6_cmh3j"]
 [ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="7_ju0u2"]
+[ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="8_fixt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc63r"]
 texture = ExtResource("2_iee36")
@@ -229,3 +230,7 @@ theme_override_font_sizes/font_size = 20
 text = "Points: 0
 Level: 1"
 horizontal_alignment = 1
+
+[node name="Portal" parent="." instance=ExtResource("8_fixt2")]
+position = Vector2(482, 33)
+scale = Vector2(0.5, 0.5)

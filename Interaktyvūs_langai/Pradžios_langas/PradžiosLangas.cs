@@ -15,7 +15,7 @@ public partial class PradžiosLangas : Control
 	
 	public void _on_pradeti_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Lygių_dizainai/Pirmas_Lygis/Pirmas.tscn");
+		GetTree().ChangeSceneToFile("res://Lygių_dizainai/1_Lygis.tscn");
 	}
 	
 	public void _on_nustatymai_pressed()
