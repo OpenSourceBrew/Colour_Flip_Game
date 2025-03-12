@@ -1,0 +1,204 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1uiahwry0q45"]
+
+[ext_resource type="Script" path="res://Interaktyvūs_langai/Pauzės_langas/PauzėsLangas.cs" id="1_61p5f"]
+[ext_resource type="Shader" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.gdshader" id="2_nr33s"]
+[ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_6frcm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kklkq"]
+shader = ExtResource("2_nr33s")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ikry"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi6lm"]
+bg_color = Color(0.2692, 0.32135, 0.507908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq3s3"]
+bg_color = Color(0.166755, 0.203712, 0.337551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cfpf"]
+bg_color = Color(0.450741, 0.51468, 0.729524, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="Animation" id="Animation_38jji"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_woduc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mudk"]
+_data = {
+"RESET": SubResource("Animation_woduc"),
+"blur": SubResource("Animation_38jji")
+}
+
+[node name="PauzėsLangas" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61p5f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kklkq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -103.0
+offset_right = 192.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
+theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
+theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_font_sizes/font_size = 60
+text = "Paused
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kq3s3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cfpf")
+text = "Tęsti"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kq3s3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cfpf")
+text = "Pradėti iš naujo
+"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kq3s3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cfpf")
+text = "Grįžti į meniu
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3mudk")
+}
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_testi_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_pradeti_is_naujo_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button3" to="." method="_on_grizti_i_meniu_pressed"]

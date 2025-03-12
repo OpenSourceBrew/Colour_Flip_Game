@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cjfle6t47c0s6"]
+[gd_scene load_steps=27 format=4 uid="uid://cjfle6t47c0s6"]
 
 [ext_resource type="Texture2D" uid="uid://jukr6glasey8" path="res://Fonas/frame_0_delay-0.1s.png" id="1_f63i4"]
 [ext_resource type="Texture2D" uid="uid://uwwmj85anbk4" path="res://Fonas/frame_1_delay-0.1s.png" id="2_xim1y"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://5lqfkiwai0bd" path="res://Blokai/HealthUI1.png" id="16_dl8yl"]
 [ext_resource type="AudioStream" uid="uid://cr44s5s5s3650" path="res://Muzika/zapsplat_fantasy_psychic_light_bright_shimmering_magical_104509.mp3" id="17_leqp5"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="18_duihs"]
+[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="19_4vjva"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_l7gkh"]
 frames = 6
@@ -2227,3 +2228,7 @@ pitch_scale = 0.5
 
 [node name="Portal" parent="." instance=ExtResource("18_duihs")]
 position = Vector2(985, 511)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("19_4vjva")]
