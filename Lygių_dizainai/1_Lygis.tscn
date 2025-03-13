@@ -1,13 +1,12 @@
-[gd_scene load_steps=15 format=4 uid="uid://g51d3cgk8ps0"]
+[gd_scene load_steps=14 format=4 uid="uid://g51d3cgk8ps0"]
 
 [ext_resource type="Texture2D" uid="uid://brup1bpr8rv60" path="res://Fonas/background 1.png" id="1_5mv7i"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_in8t5"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_gn6dt"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="4_dii40"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_5gaxv"]
-[ext_resource type="AudioStream" uid="uid://coefnjmhub3ej" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="6_0ofmo"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_mswf5"]
-[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="8_78pao"]
+[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="6_55del"]
+[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_mswf5"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="9_ul4bv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_jt1gw"]
 
@@ -366,8 +365,9 @@ sources/4 = SubResource("TileSetAtlasSource_8bc8q")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -300.0
 offset_right = 592.0
-offset_bottom = 41.0
+offset_bottom = -259.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5mv7i")
@@ -381,11 +381,11 @@ tile_map_data = PackedByteArray("AAABAAsAAQAJAAEAAAABAAwAAQAAAAMAAAABAA0AAQABAAI
 tile_set = SubResource("TileSet_o8qmb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_5gaxv")]
-position = Vector2(83, 223)
+position = Vector2(103, 220)
 safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(45, 50)
+position = Vector2(47, 48)
 offset = Vector2(150, -90)
 zoom = Vector2(1.5, 1.5)
 limit_left = -190
@@ -394,24 +394,15 @@ limit_right = 1600
 limit_bottom = 685
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("6_0ofmo")
+stream = ExtResource("6_55del")
 volume_db = -16.0
-pitch_scale = 1.5
+pitch_scale = 0.7
 autoplay = true
 parameters/looping = true
 
 [node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("7_mswf5")
 volume_db = -16.0
-
-[node name="Collectable" parent="." instance=ExtResource("8_78pao")]
-position = Vector2(369, 282)
-
-[node name="Collectable2" parent="." instance=ExtResource("8_78pao")]
-position = Vector2(656, 181)
-
-[node name="Collectable3" parent="." instance=ExtResource("8_78pao")]
-position = Vector2(947, 280)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -439,3 +430,7 @@ position = Vector2(1639, 134)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("10_jt1gw")]
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0

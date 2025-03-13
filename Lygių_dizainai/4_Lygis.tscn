@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://isqwjhwvmn81"]
+[gd_scene load_steps=15 format=3 uid="uid://isqwjhwvmn81"]
 
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_yltbw"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="2_pv4le"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="4_tp2wf"]
 [ext_resource type="Texture2D" uid="uid://d3aq4hvwidrm2" path="res://Blokai/images.jpg" id="5_52pth"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="6_2xtda"]
-[ext_resource type="AudioStream" uid="uid://coefnjmhub3ej" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="7_7vaae"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="8_2cpmr"]
-[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="9_155pi"]
+[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="7_iqouk"]
+[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="8_2cpmr"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_ivlj7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8bwt"]
@@ -524,9 +523,9 @@ layer_0/tile_data = PackedInt32Array(2555904, 851968, 5, 2621440, 851968, 6, 255
 position = Vector2(19, 536)
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("7_7vaae")
+stream = ExtResource("7_iqouk")
 volume_db = -16.0
-pitch_scale = 1.5
+pitch_scale = 0.7
 autoplay = true
 parameters/looping = true
 
@@ -536,12 +535,6 @@ volume_db = -16.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(43, 52)
-
-[node name="Collectable" parent="." instance=ExtResource("9_155pi")]
-position = Vector2(149, 538)
-
-[node name="Collectable2" parent="." instance=ExtResource("9_155pi")]
-position = Vector2(221, 473)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

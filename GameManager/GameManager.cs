@@ -5,103 +5,104 @@ public partial class GameManager : Node
 {
 	public static GameManager Instance { get; private set; } // Singleton instance
 	private AudioStreamPlayer backgroundMusic;
-	private Label infoLabel;
-	private int score = 0;
-	private int currentLevel = 1;  // Start at Level 1
-	private int totalLevels = 4;   // Total number of levels
+	//private Label infoLabel;
+	//private int score = 0;
+	//private int currentLevel = 1;
+	//private int totalLevels = 4;
 
 	public override void _Ready()
 	{
 		if (Instance == null)
 		{
 			Instance = this;
-			AddChild(this);
 		}
 		else
 		{
-			QueueFree(); // Prevent duplicate instances
+			QueueFree();
 			return;
 		}
+		// Prevent GameManager from being removed when changing levels
+		SetDeferred("process_mode", (int)ProcessModeEnum.Always);
 		
-		backgroundMusic = GetNodeOrNull<AudioStreamPlayer>("/root/Node2/BackgroundMusic");
+		CreateDefaultMusic();
 		
-		if (backgroundMusic != null && !backgroundMusic.Playing)
-		{
-			backgroundMusic.Play(); // ✅ Start music at game launch
-		}
-		else
-		{
-			GD.PrintErr("ERROR: BackgroundMusic node not found!");
-		}
-		
-		infoLabel = GetNodeOrNull<Label>("/root/Node2/UI/Panel/InfoLabel");
-		UpdateLevelLabel();
+		//infoLabel = GetNodeOrNull<Label>("/root/Node2/UI/Panel/InfoLabel");
+		//UpdateLevelLabel();
 	}
+	// Method to change music for different levels
+	public void ChangeMusicForLevel(int level)
+	{
+		string musicPath = $"res://Muzika/Foninė_muzika/music_level{level}.mp3"; // Adjust as needed
 
-	public void AddPoint()
-	{
-		score++;
-		UpdateLevelLabel();
-	}
-
-	public void NextLevel()
-	{
-		if (currentLevel < totalLevels)
-		{
-			currentLevel++;
-			ChangeMusicForLevel(currentLevel);
-			UpdateLevelLabel();
-			GetTree().CallDeferred("ChangeSceneToFile", $"res://Levels/Level{currentLevel}.tscn");
-		}
-		else
-		{
-			GD.Print("Game Completed!");
-			GetTree().ChangeSceneToFile("res://Levels/VictoryScreen.tscn");
-		}
-	}
-	
-	private void UpdateLevelLabel()
-	{
-		if (IsInstanceValid(infoLabel))
-		{
-			infoLabel.Text = $"Points: {score}\nLevel: {currentLevel}/{totalLevels}";
-		}
-		else
-		{
-			GD.PrintErr("ERROR: infoLabel not found!");
-		}
-	}
-
-	private void ChangeMusicForLevel(int level)
-	{
-		string musicPath = "res://Muzika/zapsplat_fantasy_psychic_light_bright_shimmering_magical_104509.mp3";
-		
 		if (ResourceLoader.Exists(musicPath) && IsInstanceValid(backgroundMusic))
 		{
-			backgroundMusic.Stream = (AudioStream)GD.Load(musicPath);
+			backgroundMusic.Stream = GD.Load<AudioStream>(musicPath);
 			backgroundMusic.Play();
+			//GD.Print($"Playing music for level {level}: {musicPath}");
+		}
+		else
+		{
+			GD.PrintErr($"ERROR: Music file not found for level {level} at {musicPath}!");
 		}
 	}
-}
-//private void ChangeMusicForLevel(int level)
+	public void CreateDefaultMusic()
+	{
+		//If AudioStreamPlayer does not exist, create and add it
+		if (backgroundMusic == null)
+		{
+			backgroundMusic = new AudioStreamPlayer();
+			backgroundMusic.Name = "AudioStreamPlayer";
+			AddChild(backgroundMusic);
+		}
+		else
+		{
+			GD.PrintErr($"ERROR: Failed to create new AudioStreamPlayer!");
+		}
+		
+		string defaultMusicPath = "res://Muzika/Foninė_muzika/music_level1.mp3";
+		if (ResourceLoader.Exists(defaultMusicPath) && IsInstanceValid(backgroundMusic))
+		{
+			backgroundMusic.Stream = (AudioStream)GD.Load(defaultMusicPath);
+			//await ToSignal(GetTree().CreateTimer(6.0f), "timeout"); // Wait 5 seconds
+			backgroundMusic.Play();
+			backgroundMusic.VolumeDb = -10f;
+		}
+		else
+		{
+			GD.PrintErr($"ERROR: Default music file not found at {defaultMusicPath}!");
+		}
+	}
+	//public void AddPoint()
 	//{
-		////  Use a dictionary to set different music for each level
-		//var levelMusic = new Dictionary<int, string>
+		//score++;
+		//UpdateLevelLabel();
+	//}
+
+	//public void NextLevel()
+	//{
+		//if (currentLevel < totalLevels)
 		//{
-			//{ 1, "res://Muzika/level1.mp3" },
-			//{ 2, "res://Muzika/level2.mp3" },
-			//{ 3, "res://Muzika/level3.mp3" },
-			//{ 4, "res://Muzika/level4.mp3" }
-		//};
-//
-		//if (levelMusic.ContainsKey(level) && ResourceLoader.Exists(levelMusic[level]))
-		//{
-			//backgroundMusic.Stream = (AudioStream)GD.Load(levelMusic[level]);
-			//backgroundMusic.Play();
-			//GD.Print($"Now playing: {levelMusic[level]}");
+			//currentLevel++;
+			//ChangeMusicForLevel(currentLevel);
+			//UpdateLevelLabel();
+			//GetTree().CallDeferred("ChangeSceneToFile", $"res://Levels/Level{currentLevel}.tscn");
 		//}
 		//else
 		//{
-			//GD.PrintErr($"ERROR: Music file not found for Level {level}");
+			//GD.Print("Game Completed!");
+			//GetTree().ChangeSceneToFile("res://Levels/VictoryScreen.tscn");
 		//}
 	//}
+	
+	//private void UpdateLevelLabel()
+	//{
+		//if (IsInstanceValid(infoLabel))
+		//{
+			//infoLabel.Text = $"Points: {score}\nLevel: {currentLevel}/{totalLevels}";
+		//}
+		//else
+		//{
+			//GD.PrintErr("ERROR: infoLabel not found!");
+		//}
+	//}
+}
