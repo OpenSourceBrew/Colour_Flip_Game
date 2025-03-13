@@ -11,7 +11,7 @@ public partial class Portal : Node
 		sprite2D.Play("default");
 	}
 
-	private void _on_body_entered(Node2D body)
+	private  void _on_body_entered(Node2D body)
 	{
 		if (body.IsInGroup("Player"))
 		{
@@ -21,11 +21,12 @@ public partial class Portal : Node
 
 			if (int.TryParse(levelNumberStr, out int currentLevelNumber))
 			{
-				GD.Print(currentLevelNumber);
-				GameManager.Instance.ChangeMusicForLevel(currentLevelNumber);
 				int nextLevelNumber = currentLevelNumber + 1;
 				string nextLevelPath = $"res://Lygių_dizainai/{nextLevelNumber}_Lygis.tscn";
 				
+				// **Update GameManager level number before switching scenes**
+				GameManager.Instance.SetCurrentLevel(nextLevelNumber);
+				//await ToSignal(GetTree().CreateTimer(0.10f), "timeout");
 				GameManager.Instance.ChangeMusicForLevel(nextLevelNumber);
 				
 				GetTree().CallDeferred("change_scene_to_file", nextLevelPath);

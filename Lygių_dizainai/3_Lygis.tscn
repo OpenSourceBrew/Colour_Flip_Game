@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cjfle6t47c0s6"]
+[gd_scene load_steps=23 format=4 uid="uid://cjfle6t47c0s6"]
 
 [ext_resource type="Texture2D" uid="uid://jukr6glasey8" path="res://Fonas/frame_0_delay-0.1s.png" id="1_f63i4"]
 [ext_resource type="Texture2D" uid="uid://uwwmj85anbk4" path="res://Fonas/frame_1_delay-0.1s.png" id="2_xim1y"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="11_h555k"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="12_8th00"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="13_m3iof"]
-[ext_resource type="Texture2D" uid="uid://5lqfkiwai0bd" path="res://Blokai/HealthUI1.png" id="16_dl8yl"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="18_duihs"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="19_4vjva"]
 
@@ -2155,60 +2154,12 @@ parameters/looping = true
 stream = ExtResource("13_m3iof")
 volume_db = -16.0
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="UI"]
-anchors_preset = -1
-anchor_left = 0.0104167
-anchor_top = 0.0231482
-anchor_right = 0.141494
-anchor_bottom = 0.131173
-metadata/_edit_use_anchors_ = true
-
-[node name="InfoLabel" type="Label" parent="UI/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.49999
-offset_bottom = 1.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
-text = "Points: 0
-Level: 1"
-horizontal_alignment = 1
-
-[node name="HeartBar" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="HeartBar"]
-texture_filter = 1
-offset_left = 14.0
-offset_top = 93.0
-offset_right = 36.0
-offset_bottom = 115.0
-texture = ExtResource("16_dl8yl")
-
-[node name="TextureRect2" type="TextureRect" parent="HeartBar"]
-texture_filter = 1
-offset_left = 39.0
-offset_top = 93.0
-offset_right = 61.0
-offset_bottom = 115.0
-texture = ExtResource("16_dl8yl")
-
-[node name="TextureRect3" type="TextureRect" parent="HeartBar"]
-texture_filter = 1
-offset_left = 63.0
-offset_top = 93.0
-offset_right = 85.0
-offset_bottom = 115.0
-texture = ExtResource("16_dl8yl")
-
 [node name="Portal" parent="." instance=ExtResource("18_duihs")]
 position = Vector2(985, 511)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("19_4vjva")]
+offset_left = 4.0
+offset_right = 4.0
 offset_bottom = -5.0
