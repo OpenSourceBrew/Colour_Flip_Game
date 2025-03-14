@@ -24,11 +24,6 @@ public partial class Portal : Node
 				int nextLevelNumber = currentLevelNumber + 1;
 				string nextLevelPath = $"res://Lygių_dizainai/{nextLevelNumber}_Lygis.tscn";
 				
-				// **Update GameManager level number before switching scenes**
-				GameManager.Instance.SetCurrentLevel(nextLevelNumber);
-				//await ToSignal(GetTree().CreateTimer(0.10f), "timeout");
-				GameManager.Instance.ChangeMusicForLevel(nextLevelNumber);
-				
 				GetTree().CallDeferred("change_scene_to_file", nextLevelPath);
 			}
 			else

@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://isqwjhwvmn81"]
+[gd_scene load_steps=18 format=3 uid="uid://isqwjhwvmn81"]
 
+[ext_resource type="Script" path="res://Lygių_dizainai/Level4.cs" id="1_n3llw"]
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_yltbw"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="2_pv4le"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="3_hbjo8"]
@@ -9,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="7_iqouk"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="8_2cpmr"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_ivlj7"]
+[ext_resource type="AudioStream" uid="uid://dr3h2dm84dils" path="res://Muzika/Foninė_muzika/music_level4.mp3" id="11_pe7us"]
+[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="11_ptmr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8bwt"]
 texture = ExtResource("2_pv4le")
@@ -500,6 +503,10 @@ sources/3 = SubResource("TileSetAtlasSource_ucjky")
 sources/2 = SubResource("TileSetAtlasSource_n5fh5")
 
 [node name="Node2" type="Node"]
+script = ExtResource("1_n3llw")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_pe7us")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -522,6 +529,12 @@ layer_0/tile_data = PackedInt32Array(2555904, 851968, 5, 2621440, 851968, 6, 255
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_2xtda")]
 position = Vector2(19, 536)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(43, 52)
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_bottom = 650
+
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("7_iqouk")
 volume_db = -16.0
@@ -533,13 +546,44 @@ parameters/looping = true
 stream = ExtResource("8_2cpmr")
 volume_db = -16.0
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(43, 52)
+[node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("11_ptmr1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("10_ivlj7")]
-offset_left = 1.0
-offset_top = -15.0
-offset_right = 1.0
-offset_bottom = -15.0
+offset_left = 9.0
+offset_top = -5.0
+offset_right = 9.0
+offset_bottom = -5.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.118827
+anchor_right = 0.199653
+anchor_bottom = 0.229938
+offset_left = -20.0
+offset_top = -59.0
+offset_right = -20.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoLabel" type="Label" parent="UI/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -30.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+horizontal_alignment = 1
+vertical_alignment = 1

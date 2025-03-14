@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://cjfle6t47c0s6"]
+[gd_scene load_steps=26 format=4 uid="uid://cjfle6t47c0s6"]
 
 [ext_resource type="Texture2D" uid="uid://jukr6glasey8" path="res://Fonas/frame_0_delay-0.1s.png" id="1_f63i4"]
+[ext_resource type="Script" path="res://Lygių_dizainai/Level3.cs" id="1_oj3q4"]
 [ext_resource type="Texture2D" uid="uid://uwwmj85anbk4" path="res://Fonas/frame_1_delay-0.1s.png" id="2_xim1y"]
 [ext_resource type="Texture2D" uid="uid://cjxw6ixstut8x" path="res://Fonas/frame_2_delay-0.1s.png" id="3_dtw10"]
 [ext_resource type="Texture2D" uid="uid://dnekoarrmlewx" path="res://Fonas/frame_3_delay-0.1s.png" id="4_ctyoh"]
@@ -13,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="11_h555k"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="12_8th00"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="13_m3iof"]
+[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="16_ngmhl"]
+[ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level3.mp3" id="17_w1jyv"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="18_duihs"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="19_4vjva"]
 
@@ -2105,6 +2108,10 @@ sources/2 = SubResource("TileSetAtlasSource_obdis")
 sources/3 = SubResource("TileSetAtlasSource_jpfbo")
 
 [node name="Node2" type="Node"]
+script = ExtResource("1_oj3q4")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_w1jyv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -2154,6 +2161,9 @@ parameters/looping = true
 stream = ExtResource("13_m3iof")
 volume_db = -16.0
 
+[node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("16_ngmhl")
+
 [node name="Portal" parent="." instance=ExtResource("18_duihs")]
 position = Vector2(985, 511)
 
@@ -2163,3 +2173,35 @@ position = Vector2(985, 511)
 offset_left = 4.0
 offset_right = 4.0
 offset_bottom = -5.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.118827
+anchor_right = 0.199653
+anchor_bottom = 0.229938
+offset_left = -27.0
+offset_top = -54.0
+offset_right = -27.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="InfoLabel" type="Label" parent="UI/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -28.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+horizontal_alignment = 1
+vertical_alignment = 1

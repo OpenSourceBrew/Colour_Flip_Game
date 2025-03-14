@@ -7,12 +7,13 @@ public partial class PradžiosLangas : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		CreateDefaultMusic();
+		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/menu_music.mp3");
+		backgroundMusic.Play();
 	}
 	
 	public void _on_pradeti_pressed()
 	{
-		backgroundMusic.Stop();
 		GetTree().ChangeSceneToFile("res://Lygių_dizainai/1_Lygis.tscn");
 	}
 	
