@@ -98,7 +98,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_qgcqa")
 theme_override_styles/hover = SubResource("StyleBoxFlat_grb7a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_21xqt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_exmp5")
-text = "Nustatymai"
+text = "Instrukcijos
+"
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
