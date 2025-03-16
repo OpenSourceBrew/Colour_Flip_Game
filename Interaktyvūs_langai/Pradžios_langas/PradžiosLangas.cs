@@ -19,7 +19,7 @@ public partial class PradžiosLangas : Control
 	
 	public void _on_nustatymai_pressed()
 	{
-		
+		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Instrukcijų_langas/instrukcijų_langas.tscn");
 	}
 	
 	public void _on_iseiti_pressed()
