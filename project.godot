@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Colour_Flip_Game"
-run/main_scene="res://Interaktyvūs_langai/Pradžios_langas/pradžios_langas.tscn"
+run/main_scene="res://Lygių_dizainai/2_Lygis.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://newIcon.png"
 
 [autoload]
 
+GameManager="*res://GameManager/GameManager.cs"
 UI="*res://Interaktyvūs_langai/Duomenų_langas/UI.tscn"
 
 [display]

@@ -1,17 +1,14 @@
-[gd_scene load_steps=17 format=4 uid="uid://g51d3cgk8ps0"]
+[gd_scene load_steps=14 format=4 uid="uid://g51d3cgk8ps0"]
 
-[ext_resource type="Script" path="res://Lygių_dizainai/Level1.cs" id="1_2xvq1"]
 [ext_resource type="Texture2D" uid="uid://brup1bpr8rv60" path="res://Fonas/background 1.png" id="1_5mv7i"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_in8t5"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_gn6dt"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="4_dii40"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_5gaxv"]
-[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="6_55del"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_mswf5"]
+[ext_resource type="AudioStream" path="res://Muzika/zapsplat_foley_footsteps_walking_shoes_gravel_stones_close_001_107745.mp3" id="6_0ofmo"]
+[ext_resource type="AudioStream" path="res://Muzika/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_mswf5"]
+[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="8_78pao"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="9_ul4bv"]
-[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_jt1gw"]
-[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="10_p0qb2"]
-[ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1.mp3" id="11_oin3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttaig"]
 texture = ExtResource("2_in8t5")
@@ -363,18 +360,13 @@ sources/2 = SubResource("TileSetAtlasSource_n3r70")
 sources/4 = SubResource("TileSetAtlasSource_8bc8q")
 
 [node name="Node2" type="Node"]
-script = ExtResource("1_2xvq1")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_oin3p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -300.0
 offset_right = 592.0
-offset_bottom = -259.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5mv7i")
@@ -388,11 +380,11 @@ tile_map_data = PackedByteArray("AAABAAsAAQAJAAEAAAABAAwAAQAAAAMAAAABAA0AAQABAAI
 tile_set = SubResource("TileSet_o8qmb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_5gaxv")]
-position = Vector2(99, 223)
+position = Vector2(83, 223)
 safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(47, 48)
+position = Vector2(45, 50)
 offset = Vector2(150, -90)
 zoom = Vector2(1.5, 1.5)
 limit_left = -190
@@ -401,9 +393,9 @@ limit_right = 1600
 limit_bottom = 685
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("6_55del")
+stream = ExtResource("6_0ofmo")
 volume_db = -16.0
-pitch_scale = 0.7
+pitch_scale = 1.5
 autoplay = true
 parameters/looping = true
 
@@ -411,43 +403,34 @@ parameters/looping = true
 stream = ExtResource("7_mswf5")
 volume_db = -16.0
 
-[node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("10_p0qb2")
+[node name="Collectable" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(369, 282)
 
-[node name="Portal" parent="." instance=ExtResource("9_ul4bv")]
-position = Vector2(1639, 134)
+[node name="Collectable2" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(656, 181)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("10_jt1gw")]
-offset_left = -5.0
-offset_top = -1.0
-offset_right = -5.0
-offset_bottom = -1.0
+[node name="Collectable3" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(947, 280)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="UI"]
-texture_filter = 1
-anchors_preset = -1
-anchor_left = 0.0130208
-anchor_top = 0.037037
-anchor_right = 0.171007
-anchor_bottom = 0.148148
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 262.0
+offset_bottom = 139.0
 
 [node name="InfoLabel" type="Label" parent="UI/Panel"]
-texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -29.0
-offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 25
+text = "Points: 0
+Level: 1"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Portal" parent="." instance=ExtResource("9_ul4bv")]
+position = Vector2(1639, 134)

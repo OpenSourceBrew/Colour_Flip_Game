@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c63xby04f6c7f"]
+
+[ext_resource type="Script" path="res://Veikėjas/mirties mechanika/mirties_langas.gd" id="1_1ktwy"]
+
+[node name="MirtiesLangas" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1ktwy")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+offset_left = 15.0
+offset_top = -21.0
+offset_right = 1050.0
+offset_bottom = 525.0
+
+[node name="Label" type="Label" parent="."]
+process_mode = 3
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.018
+offset_left = 171.0
+offset_top = 39.0
+offset_right = 976.416
+offset_bottom = 183.336
+theme_override_font_sizes/font_size = 60
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="."]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.032
+anchor_right = 0.032
+offset_left = -7.864
+offset_top = 160.0
+offset_right = 479.136
+offset_bottom = 251.0
+text = "Retry"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
