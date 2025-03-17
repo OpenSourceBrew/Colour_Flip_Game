@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=19 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_dpe1x"]
-[ext_resource type="Script" path="res://Lygių_dizainai/Level2.cs" id="1_ljbm2"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_iee36"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="3_vue2o"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="4_4cv7p"]
@@ -11,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_xwnyc"]
 [ext_resource type="AudioStream" uid="uid://dfxhm0y17kbxj" path="res://Muzika/Foninė_muzika/music_level2.mp3" id="10_wp1kw"]
+[ext_resource type="PackedScene" uid="uid://c63xby04f6c7f" path="res://Veikėjas/mirties mechanika/mirties_langas.tscn" id="12_0iaci"]
+[ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="13_ehtsk"]
+[ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint_manager.gd" id="14_uvyd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc63r"]
 texture = ExtResource("2_iee36")
@@ -165,8 +167,31 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fc63r")
 sources/1 = SubResource("TileSetAtlasSource_3s5ag")
 
-[node name="Node2" type="Node"]
-script = ExtResource("1_ljbm2")
+[sub_resource type="GDScript" id="GDScript_wltuh"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		get_node(\"../MirtiesLangas\").game_over()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwdob"]
+size = Vector2(265, 60)
+
+[node name="Node3" type="Node"]
+
+[node name="MirtiesLangas" parent="." instance=ExtResource("12_0iaci")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_wp1kw")
@@ -253,3 +278,18 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MirtiesZona" type="Area2D" parent="."]
+script = SubResource("GDScript_wltuh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MirtiesZona"]
+position = Vector2(820, 690)
+shape = SubResource("RectangleShape2D_vwdob")
+
+[node name="Checkpoint" parent="." instance=ExtResource("13_ehtsk")]
+position = Vector2(229, 627)
+
+[node name="CheckpointManager" type="Node" parent="."]
+script = ExtResource("14_uvyd0")
+
+[connection signal="body_entered" from="MirtiesZona" to="MirtiesZona" method="_on_body_entered"]
