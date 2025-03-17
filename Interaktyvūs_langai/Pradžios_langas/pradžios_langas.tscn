@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2lutj5rdsxmb"]
+[gd_scene load_steps=9 format=3 uid="uid://c2lutj5rdsxmb"]
 
 [ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="1_ew1l4"]
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Pradžios_langas/PradžiosLangas.cs" id="1_q1dyw"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="2_fs3mq"]
-[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_cqawt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phddv"]
 texture = ExtResource("1_ew1l4")
@@ -52,10 +51,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 2.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_phddv")
@@ -141,9 +136,6 @@ theme_override_font_sizes/font_size = 60
 text = "Colour Flip Game"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_cqawt")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_pradeti_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_nustatymai_pressed"]

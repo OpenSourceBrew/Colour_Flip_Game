@@ -103,6 +103,7 @@ Pakeisti gravitaciją - enter
 "
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 435.0
 offset_top = 417.0
 offset_right = 654.0
