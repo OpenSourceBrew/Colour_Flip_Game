@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://g51d3cgk8ps0"]
+[gd_scene load_steps=13 format=4 uid="uid://g51d3cgk8ps0"]
 
 [ext_resource type="Texture2D" uid="uid://brup1bpr8rv60" path="res://Fonas/background 1.png" id="1_5mv7i"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_in8t5"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_gn6dt"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="4_dii40"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_5gaxv"]
+[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="8_5p1cy"]
 [ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="8_78pao"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="9_ul4bv"]
 
@@ -429,3 +430,11 @@ horizontal_alignment = 1
 
 [node name="Portal" parent="." instance=ExtResource("9_ul4bv")]
 position = Vector2(1639, 134)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("8_5p1cy")]
+offset_left = -285.0
+offset_top = -195.0
+offset_right = 305.0
+offset_bottom = 124.0
