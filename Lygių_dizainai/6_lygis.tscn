@@ -114,6 +114,10 @@ sources/0 = SubResource("TileSetAtlasSource_8spra")
 
 [node name="Node" type="Node"]
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0hxp5")
+autoplay = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 anchors_preset = 15
@@ -160,15 +164,11 @@ stream = ExtResource("6_n818t")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("4_arpyr")]
-offset_left = -285.0
-offset_top = -195.0
-offset_right = 305.0
-offset_bottom = 124.0
+offset_left = -308.0
+offset_top = 523.0
+offset_right = 282.0
+offset_bottom = 842.0
 metadata/_edit_use_anchors_ = true
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_0hxp5")
-autoplay = true
 
 [node name="Portal" parent="." instance=ExtResource("9_52b6f")]
 position = Vector2(996, 426)
