@@ -12,20 +12,8 @@ public partial class PradžiosLangas : Control
 		backgroundMusic.Play();
 	}
 	
-	public void _on_pradeti_pressed()
-	{
-		GetTree().ChangeSceneToFile("res://Lygių_dizainai/1_Lygis.tscn");
-	}
 	
-	public void _on_nustatymai_pressed()
-	{
-		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Instrukcijų_langas/instrukcijų_langas.tscn");
-	}
 	
-	public void _on_iseiti_pressed()
-	{
-		GetTree().Quit();
-	}
 	public void CreateDefaultMusic()
 	{
 		//If AudioStreamPlayer does not exist, create and add it

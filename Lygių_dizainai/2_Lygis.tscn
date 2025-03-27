@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=19 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_dpe1x"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_iee36"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_xwnyc"]
 [ext_resource type="AudioStream" uid="uid://dfxhm0y17kbxj" path="res://Muzika/Foninė_muzika/music_level2.mp3" id="10_wp1kw"]
+[ext_resource type="PackedScene" uid="uid://b6icg8knligqo" path="res://Interaktyvūs_langai/Mirties_langas/mirties langas.tscn" id="11_frply"]
 [ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="13_ehtsk"]
 [ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint_manager.gd" id="14_uvyd0"]
 
@@ -168,7 +169,7 @@ sources/1 = SubResource("TileSetAtlasSource_3s5ag")
 
 [sub_resource type="GDScript" id="GDScript_wltuh"]
 script/source = "extends Area2D
-
+var touched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -180,9 +181,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> bool:
 	if body.is_in_group(\"Player\"):
-		get_node(\"../MirtiesLangas\").game_over()
+		return true
+	return false
+			
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwdob"]
@@ -243,6 +246,8 @@ offset_left = -285.0
 offset_top = -195.0
 offset_right = 305.0
 offset_bottom = 124.0
+
+[node name="MirtiesLangas" parent="CanvasLayer" instance=ExtResource("11_frply")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 

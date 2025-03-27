@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1uiahwry0q45"]
+[gd_scene load_steps=12 format=3 uid="uid://bsbhbpi4uxiko"]
 
-[ext_resource type="Script" path="res://Interaktyvūs_langai/Pauzės_langas/PauzėsLangas.cs" id="1_61p5f"]
-[ext_resource type="Shader" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.gdshader" id="2_nr33s"]
-[ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_6frcm"]
+[ext_resource type="Script" path="res://Interaktyvūs_langai/Pauzės_langas/PauzėsLangas.cs" id="1_0tcdi"]
+[ext_resource type="Shader" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.gdshader" id="2_y3wyh"]
+[ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_c6n3q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kklkq"]
-shader = ExtResource("2_nr33s")
+shader = ExtResource("2_y3wyh")
 shader_parameter/lod = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ikry"]
@@ -106,7 +106,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_61p5f")
+script = ExtResource("1_0tcdi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kklkq")
@@ -140,7 +140,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
 theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
-theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_fonts/font = ExtResource("3_c6n3q")
 theme_override_font_sizes/font_size = 60
 text = "Paused
 "
@@ -150,11 +150,11 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
 theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
 theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
 theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
-theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_fonts/font = ExtResource("3_c6n3q")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
@@ -169,7 +169,7 @@ theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
 theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
 theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
 theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
-theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_fonts/font = ExtResource("3_c6n3q")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
@@ -185,7 +185,7 @@ theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
 theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
 theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
 theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
-theme_override_fonts/font = ExtResource("3_6frcm")
+theme_override_fonts/font = ExtResource("3_c6n3q")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0ikry")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fi6lm")
