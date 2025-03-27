@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=18 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_dpe1x"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_iee36"]
@@ -10,7 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_xwnyc"]
 [ext_resource type="AudioStream" uid="uid://dfxhm0y17kbxj" path="res://Muzika/Foninė_muzika/music_level2.mp3" id="10_wp1kw"]
-[ext_resource type="PackedScene" uid="uid://c63xby04f6c7f" path="res://Veikėjas/mirties mechanika/mirties_langas.tscn" id="12_0iaci"]
 [ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="13_ehtsk"]
 [ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint_manager.gd" id="14_uvyd0"]
 
@@ -190,8 +189,6 @@ func _on_body_entered(body: Node2D) -> void:
 size = Vector2(265, 60)
 
 [node name="Node3" type="Node"]
-
-[node name="MirtiesLangas" parent="." instance=ExtResource("12_0iaci")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_wp1kw")
