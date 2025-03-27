@@ -2112,6 +2112,7 @@ script = ExtResource("1_oj3q4")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_w1jyv")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

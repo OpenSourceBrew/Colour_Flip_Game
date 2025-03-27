@@ -144,6 +144,7 @@ vertical_alignment = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cqawt")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_pradeti_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_nustatymai_pressed"]
