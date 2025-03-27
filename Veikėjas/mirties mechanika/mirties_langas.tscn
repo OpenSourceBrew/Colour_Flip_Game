@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://c63xby04f6c7f"]
+[gd_scene load_steps=2 format=3 uid="uid://bss22pqj2374g"]
 
-[ext_resource type="Script" path="res://Veikėjas/mirties mechanika/mirties_langas.gd" id="1_1ktwy"]
+[sub_resource type="GDScript" id="GDScript_ttl8n"]
+script/source = "extends CanvasLayer
+
+var checkpoint_manager
+var player
+
+func _ready():
+	self.hide()
+	checkpoint_manager = get_parent().get_node(\"CheckpointManager\")
+	player = get_parent().get_node(\"CharacterBody2D\")
+	 
+func _on_retry_pressed() -> void:
+	get_tree().paused = false
+	player.position = checkpoint_manager.last_location
+
+func game_over():
+	get_tree().paused = true
+	self.show()
+"
 
 [node name="MirtiesLangas" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_1ktwy")
+script = SubResource("GDScript_ttl8n")
 
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
