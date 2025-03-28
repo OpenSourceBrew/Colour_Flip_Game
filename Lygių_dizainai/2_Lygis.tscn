@@ -204,6 +204,56 @@ offset_right = 1744.0
 offset_bottom = 739.0
 texture = ExtResource("1_dpe1x")
 
+[node name="PointLight" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(939, 139)
+rotation = 2.79253
+scale = Vector2(0.383798, 0.203363)
+color = Color(0.805124, 0.000626277, 0.827015, 1)
+energy = 2.0
+texture = ExtResource("11_mrx5i")
+texture_scale = 2.0
+
+[node name="PointLight2" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(241, 559)
+rotation = 2.79253
+scale = Vector2(0.383798, 0.203363)
+color = Color(0.805124, 0.000626277, 0.827015, 1)
+energy = 2.0
+texture = ExtResource("11_mrx5i")
+texture_scale = 2.0
+
+[node name="PointLight3" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(1492, 163)
+rotation = 2.28464
+scale = Vector2(0.383798, 0.203363)
+color = Color(0.805124, 0.000626277, 0.827015, 1)
+energy = 2.0
+texture = ExtResource("11_mrx5i")
+texture_scale = 2.0
+
+[node name="PointLight4" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(782, 416)
+rotation = 0.977384
+scale = Vector2(0.43212, 0.203363)
+color = Color(0.805124, 0.000626277, 0.827015, 1)
+shadow_enabled = true
+texture = ExtResource("11_mrx5i")
+texture_scale = 2.0
+
+[node name="PointLight5" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(1510, 560)
+rotation = 1.5708
+scale = Vector2(0.278312, 0.203363)
+color = Color(0.805124, 0.000626277, 0.827015, 1)
+shadow_enabled = true
+texture = ExtResource("11_mrx5i")
+texture_scale = 2.0
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -256,6 +306,10 @@ anchor_left = 0.0460069
 anchor_top = 0.0601852
 anchor_right = 0.939236
 anchor_bottom = 0.916667
+offset_left = 17.0001
+offset_top = -36.0
+offset_right = 17.0
+offset_bottom = -35.9999
 metadata/_edit_use_anchors_ = true
 
 [node name="MirtiesZona" type="Area2D" parent="."]

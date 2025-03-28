@@ -392,20 +392,41 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5mv7i")
 expand_mode = 1
+flip_v = true
 
 [node name="PointLight" type="PointLight2D" parent="TextureRect"]
 show_behind_parent = true
-position = Vector2(586, 76.8879)
+position = Vector2(456, 151)
 scale = Vector2(0.406968, 0.276635)
-color = Color(0.898754, 0.297024, 0.824711, 1)
+color = Color(0.035676, 0.102498, 0.439003, 1)
+energy = 2.0
 shadow_enabled = true
 texture = ExtResource("12_mmm83")
+texture_scale = 1.5
 
 [node name="PointLight2" type="PointLight2D" parent="TextureRect"]
 show_behind_parent = true
-position = Vector2(1329, 88)
+position = Vector2(973, 171)
 scale = Vector2(0.406968, 0.321076)
 color = Color(0.960272, 0.568661, 0.646447, 1)
+shadow_enabled = true
+texture = ExtResource("12_mmm83")
+
+[node name="PointLight3" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(1137, 118)
+scale = Vector2(0.406968, 0.276635)
+color = Color(0.0132396, 0.28491, 0.0226293, 1)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("12_mmm83")
+
+[node name="PointLight4" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(168, 115)
+scale = Vector2(0.406968, 0.276635)
+color = Color(1, 0.152821, 0.558677, 1)
+energy = 2.0
 shadow_enabled = true
 texture = ExtResource("12_mmm83")
 
@@ -463,9 +484,9 @@ anchor_top = -0.0385802
 anchor_right = 0.875
 anchor_bottom = 0.967593
 offset_left = 20.9995
-offset_top = 693.0
+offset_top = 17.0
 offset_right = 20.9995
-offset_bottom = 693.0
+offset_bottom = 17.0
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]

@@ -130,6 +130,47 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_key16")
 
+[node name="PointLight4" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(1002, 513.968)
+scale = Vector2(0.170708, 0.224027)
+color = Color(0.783992, 2.99373e-05, 0.573291, 1)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("11_rftjb")
+texture_scale = 2.0
+
+[node name="PointLight" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(626, 125)
+scale = Vector2(0.170708, 0.172191)
+color = Color(0.783992, 2.99373e-05, 0.573291, 1)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("11_rftjb")
+texture_scale = 2.0
+
+[node name="PointLight2" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(984, 157)
+rotation = 0.380482
+scale = Vector2(0.170708, 0.302738)
+color = Color(0.783992, 2.99373e-05, 0.573291, 1)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("11_rftjb")
+texture_scale = 2.0
+
+[node name="PointLight3" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(524, 516.468)
+scale = Vector2(0.170708, 0.170578)
+color = Color(0.783992, 2.99373e-05, 0.573291, 1)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("11_rftjb")
+texture_scale = 2.0
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -166,6 +207,10 @@ stream = ExtResource("6_n818t")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("4_arpyr")]
+offset_left = 114.0
+offset_top = 6.0
+offset_right = -126.0
+offset_bottom = -111.0
 
 [node name="Portal" parent="." instance=ExtResource("9_52b6f")]
 position = Vector2(996, 426)
