@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=4 uid="uid://cjfle6t47c0s6"]
+[gd_scene load_steps=27 format=4 uid="uid://cjfle6t47c0s6"]
 
 [ext_resource type="Texture2D" uid="uid://jukr6glasey8" path="res://Fonas/frame_0_delay-0.1s.png" id="1_f63i4"]
 [ext_resource type="Script" path="res://Lygių_dizainai/Level3.cs" id="1_oj3q4"]
+[ext_resource type="AudioStream" uid="uid://dr3h2dm84dils" path="res://Muzika/Foninė_muzika/music_level3_4.mp3" id="2_eybs6"]
 [ext_resource type="Texture2D" uid="uid://uwwmj85anbk4" path="res://Fonas/frame_1_delay-0.1s.png" id="2_xim1y"]
 [ext_resource type="Texture2D" uid="uid://cjxw6ixstut8x" path="res://Fonas/frame_2_delay-0.1s.png" id="3_dtw10"]
 [ext_resource type="Texture2D" uid="uid://dnekoarrmlewx" path="res://Fonas/frame_3_delay-0.1s.png" id="4_ctyoh"]
@@ -15,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="12_8th00"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="13_m3iof"]
 [ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="16_ngmhl"]
-[ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level3.mp3" id="17_w1jyv"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="18_duihs"]
+[ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="18_jsthk"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="19_4vjva"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_l7gkh"]
@@ -2107,11 +2108,11 @@ sources/1 = SubResource("TileSetAtlasSource_yburi")
 sources/2 = SubResource("TileSetAtlasSource_obdis")
 sources/3 = SubResource("TileSetAtlasSource_jpfbo")
 
-[node name="Node2" type="Node"]
+[node name="Node" type="Node"]
 script = ExtResource("1_oj3q4")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_w1jyv")
+stream = ExtResource("2_eybs6")
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -2142,12 +2143,11 @@ texture_filter = 1
 position = Vector2(55, 549)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(45, 48)
-offset = Vector2(150, 0)
+position = Vector2(46, 46)
 zoom = Vector2(1.5, 1.5)
-limit_left = -210
+limit_left = -70
 limit_top = 0
-limit_right = 1570
+limit_right = 1700
 limit_bottom = 950
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
@@ -2168,6 +2168,15 @@ stream = ExtResource("16_ngmhl")
 position = Vector2(1518, 756)
 scale = Vector2(1.5, 1.5)
 
+[node name="PointLight2D" type="PointLight2D" parent="Portal"]
+texture_filter = 1
+position = Vector2(31, 28)
+scale = Vector2(0.244181, 0.147501)
+color = Color(1, 1, 0.101961, 1)
+shadow_enabled = true
+texture = ExtResource("18_jsthk")
+texture_scale = 2.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("19_4vjva")]
@@ -2175,8 +2184,10 @@ anchors_preset = -1
 anchor_left = 0.00347222
 anchor_right = 1.0408
 anchor_bottom = 0.958333
-offset_left = -33.0
-offset_right = -33.0
+offset_left = 3.0
+offset_top = -11.0
+offset_right = 3.0
+offset_bottom = -11.0
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]

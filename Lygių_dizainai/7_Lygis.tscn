@@ -1,19 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6jlb2xmu8oh5"]
+[gd_scene load_steps=14 format=3 uid="uid://5i02gsljjni"]
 
-[ext_resource type="Script" path="res://Lygių_dizainai/Level6.cs" id="1_5fufb"]
-[ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_key16"]
-[ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_ir0xa"]
-[ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level6_7.mp3" id="2_k2ayb"]
-[ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="3_r54hn"]
-[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="4_6sayb"]
-[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="4_arpyr"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="5_as4y6"]
-[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="6_n818t"]
-[ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="9_52b6f"]
-[ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_rftjb"]
+[ext_resource type="Script" path="res://Lygių_dizainai/Level7.cs" id="1_fkgek"]
+[ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level6_7.mp3" id="2_5cqk8"]
+[ext_resource type="Texture2D" uid="uid://bik72iaxjgocr" path="res://Fonas/howxn0qns9861.webp" id="3_dpuku"]
+[ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="4_c0rg7"]
+[ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_f1jb4"]
+[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="6_w1q48"]
+[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_dk2ak"]
+[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="8_tsi08"]
+[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_m5uho"]
+[ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="10_vr5fn"]
+[ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_6eu46"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eslwc"]
-texture = ExtResource("2_ir0xa")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r0un"]
+texture = ExtResource("4_c0rg7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -110,15 +110,15 @@ texture = ExtResource("2_ir0xa")
 8:7/0 = 0
 9:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_tse2y"]
+[sub_resource type="TileSet" id="TileSet_cd440"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_eslwc")
+sources/0 = SubResource("TileSetAtlasSource_7r0un")
 
 [node name="Node" type="Node"]
-script = ExtResource("1_5fufb")
+script = ExtResource("1_fkgek")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_k2ayb")
+stream = ExtResource("2_5cqk8")
 autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -126,23 +126,52 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 755.0
+offset_bottom = 419.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_key16")
+scale = Vector2(0.6, 0.58)
+texture = ExtResource("3_dpuku")
+
+[node name="PointLight" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(736.667, 372.414)
+scale = Vector2(0.406968, 0.808561)
+shadow_enabled = true
+texture = ExtResource("11_6eu46")
+texture_scale = 2.0
+
+[node name="PointLight2" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(451.667, 510.345)
+rotation = 0.127409
+scale = Vector2(0.406968, 0.373352)
+shadow_enabled = true
+texture = ExtResource("11_6eu46")
+texture_scale = 2.0
+
+[node name="PointLight3" type="PointLight2D" parent="TextureRect"]
+show_behind_parent = true
+position = Vector2(1308.33, 343.103)
+rotation = -3.6809
+scale = Vector2(0.406968, 0.574717)
+shadow_enabled = true
+texture = ExtResource("11_6eu46")
+texture_scale = 2.0
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
-tile_set = SubResource("TileSet_tse2y")
+tile_set = SubResource("TileSet_cd440")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 393216, 2, 65536, 393216, 2, 131072, 393216, 2, 196608, 393216, 2, 262144, 393216, 2, 327680, 393216, 2, 393216, 393216, 2, 458752, 393216, 2, 524288, 393216, 2, 589824, 393216, 2, 655360, 393216, 2, 23, 393216, 2, 65559, 393216, 2, 131095, 393216, 2, 196631, 393216, 2, 262167, 393216, 2, 327703, 393216, 2, 393239, 393216, 2, 458775, 393216, 2, 524311, 393216, 2, 589847, 393216, 2, 655383, 393216, 2, 1, 393216, 2, 2, 393216, 2, 3, 393216, 2, 4, 393216, 2, 5, 393216, 2, 6, 393216, 2, 7, 393216, 2, 8, 393216, 2, 9, 393216, 2, 10, 393216, 2, 11, 393216, 2, 12, 393216, 2, 13, 393216, 2, 14, 393216, 2, 15, 393216, 2, 16, 393216, 2, 17, 393216, 2, 18, 393216, 2, 19, 393216, 2, 20, 393216, 2, 21, 393216, 2, 22, 393216, 2, 720896, 393216, 2, 786432, 393216, 2, 786433, 393216, 2, 786434, 393216, 2, 786435, 393216, 2, 786436, 393216, 2, 786437, 393216, 2, 786438, 393216, 2, 786439, 393216, 2, 786440, 393216, 2, 786441, 393216, 2, 786442, 393216, 2, 786443, 393216, 2, 786444, 393216, 2, 786445, 393216, 2, 786446, 393216, 2, 786447, 393216, 2, 786448, 393216, 2, 786449, 393216, 2, 786450, 393216, 2, 786451, 393216, 2, 786452, 393216, 2, 786453, 393216, 2, 786454, 393216, 2, 786455, 393216, 2, 720919, 393216, 2, 524289, 393216, 0, 589825, 393216, 0, 655361, 393216, 0, 720897, 393216, 0, 720898, 393216, 0, 655364, 393216, 0, 655367, 393216, 0, 589833, 393216, 0, 524298, 393216, 0, 524299, 393216, 0, 524300, 393216, 0, 458756, 393216, 0, 458757, 393216, 0, 458758, 393216, 0, 458759, 393216, 0, 327693, 393216, 0, 327694, 393216, 0, 327695, 393216, 0, 327696, 393216, 0, 327697, 393216, 0, 327698, 393216, 0, 327699, 393216, 0, 327700, 393216, 0, 327701, 393216, 0, 327702, 393216, 0, 393238, 393216, 0, 458774, 393216, 0, 524310, 393216, 0, 589846, 393216, 0, 655382, 393216, 0, 655365, 327680, 0, 655366, 327680, 0, 524301, 327680, 0, 524302, 327680, 0, 524303, 327680, 0, 524304, 327680, 0, 524305, 327680, 0, 720899, 327680, 5, 720900, 327680, 5, 720901, 327680, 5, 720902, 327680, 5, 720903, 327680, 5, 720904, 327680, 5, 720905, 327680, 5, 720906, 327680, 5, 720907, 327680, 5, 720908, 327680, 5, 720909, 327680, 5, 720910, 327680, 5, 720911, 327680, 5, 720912, 327680, 5, 720913, 327680, 5, 720914, 327680, 5, 720915, 327680, 5, 720916, 327680, 5, 720917, 327680, 5, 720918, 327680, 5, 327692, 393216, 0)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_r54hn")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_f1jb4")]
 position = Vector2(77, 454)
 safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(45, 47)
+position = Vector2(32, 50)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
@@ -150,24 +179,34 @@ limit_right = 1150
 limit_bottom = 620
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("4_6sayb")
+stream = ExtResource("6_w1q48")
 volume_db = -16.0
 pitch_scale = 0.7
 autoplay = true
 parameters/looping = true
 
 [node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("5_as4y6")
+stream = ExtResource("7_dk2ak")
 volume_db = -16.0
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("6_n818t")
+stream = ExtResource("8_tsi08")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("4_arpyr")]
+[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("9_m5uho")]
+anchors_preset = -1
+anchor_left = 0.00347222
+anchor_top = 0.00771605
+anchor_right = 0.994792
+anchor_bottom = 0.949074
+offset_left = 532.0
+offset_top = 262.0
+offset_right = 532.0
+offset_bottom = 262.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Portal" parent="." instance=ExtResource("9_52b6f")]
+[node name="Portal" parent="." instance=ExtResource("10_vr5fn")]
 position = Vector2(996, 426)
 
 [node name="PointLight2D" type="PointLight2D" parent="Portal"]
@@ -175,8 +214,9 @@ texture_filter = 1
 position = Vector2(31, 28)
 scale = Vector2(0.244181, 0.147501)
 color = Color(1, 1, 0.101961, 1)
+energy = 1.5
 shadow_enabled = true
-texture = ExtResource("11_rftjb")
+texture = ExtResource("11_6eu46")
 texture_scale = 2.0
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -184,14 +224,10 @@ texture_scale = 2.0
 [node name="Panel" type="Panel" parent="UI"]
 texture_filter = 1
 anchors_preset = -1
-anchor_left = 0.0416667
-anchor_top = 0.118827
-anchor_right = 0.199653
-anchor_bottom = 0.229938
-offset_left = -28.0
-offset_top = -49.0
-offset_right = -28.0
-offset_bottom = -49.0
+anchor_left = 0.046875
+anchor_top = 0.115741
+anchor_right = 0.204861
+anchor_bottom = 0.226852
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -202,9 +238,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = -30.0
-offset_bottom = -12.0
+offset_right = -29.9999
+offset_bottom = -11.9999
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)

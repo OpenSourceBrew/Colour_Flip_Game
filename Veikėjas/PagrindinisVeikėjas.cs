@@ -28,9 +28,9 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		
 		// Apply gravity
 		if (!IsOnFloor() && gravityDirection == 1)
-		Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
+			Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
 		else if (!IsOnCeiling() && gravityDirection == -1)
-		Velocity = new Vector2(Velocity.X, Velocity.Y - gravity * (float)delta);
+			Velocity = new Vector2(Velocity.X, Velocity.Y - gravity * (float)delta);
 		
 		// Jumping
 		if (Input.IsActionJustPressed("jump") && 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://isqwjhwvmn81"]
+[gd_scene load_steps=16 format=4 uid="uid://isqwjhwvmn81"]
 
+[ext_resource type="Script" path="res://Lygių_dizainai/Level4.cs" id="1_pt058"]
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_yltbw"]
+[ext_resource type="AudioStream" uid="uid://dr3h2dm84dils" path="res://Muzika/Foninė_muzika/music_level3_4.mp3" id="2_p1c8j"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="2_pv4le"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="3_hbjo8"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="6_2xtda"]
@@ -8,8 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="8_2cpmr"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="8_kjlht"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_ivlj7"]
-[ext_resource type="AudioStream" uid="uid://dr3h2dm84dils" path="res://Muzika/Foninė_muzika/music_level4.mp3" id="11_pe7us"]
 [ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="11_ptmr1"]
+[ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_qbn12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_623fs"]
 texture = ExtResource("2_pv4le")
@@ -297,6 +299,11 @@ sources/4 = SubResource("TileSetAtlasSource_623fs")
 sources/5 = SubResource("TileSetAtlasSource_dkmjm")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_pt058")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_p1c8j")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -318,13 +325,12 @@ position = Vector2(75, 500)
 safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(45, 50)
-offset = Vector2(150, -90)
+position = Vector2(47, 50)
 zoom = Vector2(1.5, 1.5)
-limit_left = -190
-limit_top = 45
-limit_right = 1600
-limit_bottom = 685
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 670
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("7_iqouk")
@@ -343,14 +349,28 @@ stream = ExtResource("11_ptmr1")
 [node name="Portal" parent="." instance=ExtResource("8_kjlht")]
 position = Vector2(1024, 362)
 
+[node name="PointLight2D" type="PointLight2D" parent="Portal"]
+texture_filter = 1
+position = Vector2(31, 28)
+scale = Vector2(0.244181, 0.147501)
+color = Color(1, 1, 0.101961, 1)
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("11_qbn12")
+texture_scale = 1.5
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("10_ivlj7")]
 anchors_preset = -1
-anchor_left = 0.103299
-anchor_top = -0.0385802
-anchor_right = 0.875
+anchor_left = 0.0468754
+anchor_top = 0.319444
+anchor_right = 0.650174
 anchor_bottom = 0.967593
+offset_left = 174.0
+offset_top = -127.0
+offset_right = 174.0
+offset_bottom = -127.0
 metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -358,11 +378,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Panel" type="Panel" parent="UI"]
 texture_filter = 1
 anchors_preset = -1
-anchor_left = 0.0243056
-anchor_top = 0.0277776
-anchor_right = 0.182292
-anchor_bottom = 0.138889
-offset_right = 1.52588e-05
+anchor_left = 0.0416667
+anchor_top = 0.118827
+anchor_right = 0.199653
+anchor_bottom = 0.229938
+offset_left = -27.0
+offset_top = -54.0
+offset_right = -27.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -373,14 +396,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -30.0
-offset_bottom = -12.0
+offset_left = 1.0
+offset_right = -28.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_pe7us")
-autoplay = true
