@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_f1jb4"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="6_w1q48"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_dk2ak"]
-[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="8_tsi08"]
+[ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="8_tsi08"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_m5uho"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="10_vr5fn"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_6eu46"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r0un"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_buxip"]
 texture = ExtResource("4_c0rg7")
 0:0/0 = 0
 1:0/0 = 0
@@ -112,7 +112,7 @@ texture = ExtResource("4_c0rg7")
 
 [sub_resource type="TileSet" id="TileSet_cd440"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7r0un")
+sources/0 = SubResource("TileSetAtlasSource_buxip")
 
 [node name="Node" type="Node"]
 script = ExtResource("1_fkgek")

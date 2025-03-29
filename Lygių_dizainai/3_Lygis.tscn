@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="11_h555k"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="12_8th00"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="13_m3iof"]
-[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="16_ngmhl"]
+[ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="16_ngmhl"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="18_duihs"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="18_jsthk"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="19_4vjva"]

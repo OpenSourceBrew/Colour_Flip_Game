@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="5_iuxh6"]
 [ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="6_cmh3j"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="8_fixt2"]
-[ext_resource type="AudioStream" uid="uid://ca8xuyrvp2ji0" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
+[ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_xwnyc"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_mrx5i"]
 [ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="13_ehtsk"]
