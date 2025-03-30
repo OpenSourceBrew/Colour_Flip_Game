@@ -17,7 +17,7 @@ public partial class Level3 : Node
 
 		if (levelLabel != null)
 		{
-			levelLabel.Text = $"Žaidimo lygis: 3 / 4"; 
+			levelLabel.Text = $"Žaidimo lygis: 3 / 8"; 
 		}
 		else
 		{
