@@ -45,7 +45,6 @@ public partial class MirtiesLangas : Control
 		{
 			Pause();
 		}
-	
 	}
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://5i02gsljjni"]
+[gd_scene load_steps=14 format=3 uid="uid://cxkl7vgukog1n"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level7.cs" id="1_fkgek"]
 [ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level6_7.mp3" id="2_5cqk8"]
