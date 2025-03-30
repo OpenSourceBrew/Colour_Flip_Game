@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cnr7uhbqm5s3g"]
+[gd_scene load_steps=20 format=3 uid="uid://mlqmwqccthom"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level5.cs" id="1_fp8ey"]
 [ext_resource type="Texture2D" uid="uid://xipgb15nnhq4" path="res://Fonas/5fTiXx.jpg" id="1_sqlm5"]
-[ext_resource type="AudioStream" path="res://Muzika/Foninė_muzika/music_level4.mp3" id="2_5pky3"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_rjb7e"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_bubua"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="4_xdbyc"]
@@ -374,7 +373,6 @@ size = Vector2(31, 20)
 script = ExtResource("1_fp8ey")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5pky3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
