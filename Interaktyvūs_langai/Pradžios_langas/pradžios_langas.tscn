@@ -39,6 +39,7 @@ shadow_color = Color(0, 0, 0, 0.729412)
 shadow_size = 10
 
 [node name="PradžiosLangas" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +47,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q1dyw")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cqawt")
+autoplay = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -142,9 +147,6 @@ theme_override_font_sizes/font_size = 60
 text = "Colour Flip Game"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_cqawt")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_pradeti_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_nustatymai_pressed"]

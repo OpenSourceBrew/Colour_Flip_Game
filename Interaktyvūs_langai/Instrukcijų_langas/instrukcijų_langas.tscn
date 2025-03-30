@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://50h1vkewr7ln"]
+[gd_scene load_steps=10 format=3 uid="uid://50h1vkewr7ln"]
 
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Instrukcijų_langas/InstrukcijųLangas.cs" id="1_cnjg3"]
 [ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="1_mu8mw"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="2_7ksj8"]
+[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_v6ucy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8qby"]
 texture = ExtResource("1_mu8mw")
@@ -51,10 +52,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -18.0
-offset_right = 1.0
-offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m8qby")
@@ -87,10 +84,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.5
-offset_top = -104.0
-offset_right = 179.5
-offset_bottom = 104.0
+offset_left = -179.0
+offset_top = -122.0
+offset_right = 180.0
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_7ksj8")
@@ -99,10 +96,11 @@ text = "Pašokti - rodyklė up arba space
 Eiti į priekį - rodyklė right
 Eiti atgal - rodyklė left
 Pakeisti gravitaciją - enter
-
+Sustabdyti - esc
 "
 
 [node name="Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 435.0
 offset_top = 417.0
 offset_right = 654.0
@@ -119,5 +117,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x7rxl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e1kal")
 theme_override_styles/normal = SubResource("StyleBoxFlat_78a5x")
 text = "Grįžti atgal"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v6ucy")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_griztiatgal_pressed"]

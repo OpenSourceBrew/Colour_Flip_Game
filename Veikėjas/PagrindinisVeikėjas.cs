@@ -3,17 +3,17 @@ using System;
 
 public partial class PagrindinisVeikėjas : CharacterBody2D
 {
-	private float SPEED = 150.0f;
-	private float JUMP_VELOCITY = -600.0f;
-	private int gravity = 2500;
+	private const float SPEED = 200.0f;
+	private const float JUMP_VELOCITY = -700.0f;
+	private int gravity = 2800;
 	private int gravityDirection = 1;
 	private const float FRICTION = 1000.0f;
 	
 	private AnimatedSprite2D sprite2D;
 	private AudioStreamPlayer walkingAudio;
 	private AudioStreamPlayer jumpingAudio;
-	private AudioStreamPlayer gravityAudio;
-	//private bool can_control = true;
+	
+	private bool can_control = true;
 	
 
 	public override void _Ready()
@@ -21,20 +21,16 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
 		walkingAudio = GetNode<AudioStreamPlayer>("WalkingAudio");
 		jumpingAudio = GetNode<AudioStreamPlayer>("JumpingAudio");
-		gravityAudio = GetNode<AudioStreamPlayer>("GravityAudio");
-		// Base speed divided by scale factor
-		float scaleFactor = Scale.X; 
-		SPEED = 150.0f * scaleFactor;
-		JUMP_VELOCITY = -600.0f * scaleFactor;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
 		// Apply gravity
 		if (!IsOnFloor() && gravityDirection == 1)
-		Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
+			Velocity = new Vector2(Velocity.X, Velocity.Y + gravity * (float)delta);
 		else if (!IsOnCeiling() && gravityDirection == -1)
-		Velocity = new Vector2(Velocity.X, Velocity.Y - gravity * (float)delta);
+			Velocity = new Vector2(Velocity.X, Velocity.Y - gravity * (float)delta);
 		
 		// Jumping
 		if (Input.IsActionJustPressed("jump") && 
@@ -51,10 +47,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		// Gravity Change
 		if (Input.IsActionJustPressed("gravityChange"))
 		{
-			if (!gravityAudio.Playing)
-			{
-				gravityAudio.Play();
-			}
 			gravityDirection *= -1;
 			sprite2D.FlipV = (gravityDirection == -1);
 		}
@@ -101,9 +93,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 			sprite2D.Play("default");
 		}
 	}
-	//public bool IsInScene(string sceneName)
-	//{
-		//Node currentScene = GetTree().CurrentScene;
-		//return currentScene.Name == sceneName;
-	//}
+	
+	
 }

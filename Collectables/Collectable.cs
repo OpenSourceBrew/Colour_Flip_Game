@@ -3,8 +3,7 @@ using System;
 
 public partial class Collectable : Area2D
 {
-	private GameManager gameManager;
-	private AudioStreamPlayer pickupSound;
+	//private AudioStreamPlayer pickupSound;
 
 	public override void _Ready()
 	{

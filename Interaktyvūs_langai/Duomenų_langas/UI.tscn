@@ -5,6 +5,7 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InfoLabel" type="Label" parent="CanvasLayer"]
+show_behind_parent = true
 offset_left = 57.0
 offset_top = 39.0
 offset_right = 97.0
