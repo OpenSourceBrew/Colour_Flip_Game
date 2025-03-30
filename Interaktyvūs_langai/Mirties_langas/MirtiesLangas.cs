@@ -44,6 +44,8 @@ public partial class MirtiesLangas : Control
 		if (!GetTree().Paused)
 		{
 			Pause();
+			GetNode<PauzėsLangas>("../../CanvasLayer/PauzėsLangas").ProcessMode = ProcessModeEnum.Disabled;
+			GetNode<PauzėsLangas>("../../CanvasLayer/PauzėsLangas").MouseFilter = MouseFilterEnum.Ignore;
 		}
 	}
 

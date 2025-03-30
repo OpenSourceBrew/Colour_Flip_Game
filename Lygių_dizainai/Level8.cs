@@ -9,7 +9,7 @@ public partial class Level8 : Node
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level6_7.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level2.mp3");
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
