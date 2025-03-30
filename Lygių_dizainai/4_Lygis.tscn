@@ -634,6 +634,7 @@ offset_left = 9.0
 offset_top = -5.0
 offset_right = 9.0
 offset_bottom = -5.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MirtiesZona" type="Area2D" parent="."]
 script = SubResource("GDScript_lam3s")
