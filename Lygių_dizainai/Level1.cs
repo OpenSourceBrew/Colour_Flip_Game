@@ -10,18 +10,18 @@ public partial class Level1 : Node
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level1.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level1_2.mp3");
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 
 		if (levelLabel != null)
 		{
-			levelLabel.Text = $"Žaidimo lygis: 1 / 4";
+			levelLabel.Text = $"Žaidimo lygis: 1 / 8";
 		}
 		else
 		{
-			GD.PrintErr("❌ ERROR: LevelLabel not found in scene!");
+			GD.PrintErr("Error: LevelLabel not found in scene!");
 		}
 	}
 
