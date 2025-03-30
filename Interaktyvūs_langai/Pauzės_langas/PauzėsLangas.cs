@@ -7,7 +7,7 @@ public partial class PauzėsLangas : Control
 
 	public override void _Ready()
 	{
-		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer1");
 		if (animationPlayer != null)
 		{
 			animationPlayer.Play("RESET");
