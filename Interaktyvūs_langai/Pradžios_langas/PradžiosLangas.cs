@@ -3,22 +3,16 @@ using System;
 
 public partial class PradžiosLangas : Control
 {
+	private AudioStreamPlayer backgroundMusic;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/menu_music.mp3");
+		backgroundMusic.Play();
 	}
 	
 	
-	
-	public void _on_iseiti_pressed()
-	{
-		GetTree().Quit();
-	}
 	
 	public void CreateDefaultMusic()
 	{
@@ -51,7 +45,6 @@ public partial class PradžiosLangas : Control
 			GD.PrintErr($"ERROR: Default music file not found at {defaultMusicPath}!");
 		}
 	}
-5efcd14 (Beveik padarytas langas)
 	
 	// Called when the node enters the scene tree for the first time.
 
