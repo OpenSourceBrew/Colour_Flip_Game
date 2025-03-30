@@ -190,7 +190,7 @@ func _on_body_entered(body: Node2D) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwdob"]
 size = Vector2(998, 60)
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 script = ExtResource("1_7hlln")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
