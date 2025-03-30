@@ -17,6 +17,7 @@ config/icon="res://newIcon.png"
 
 [autoload]
 
+GameManager="*res://GameManager/GameManager.cs"
 UI="*res://Interaktyvūs_langai/Duomenų_langas/UI.tscn"
 
 [display]

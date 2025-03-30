@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level2 : Node
+public partial class Level5 : Node
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
@@ -10,14 +10,14 @@ public partial class Level2 : Node
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level2.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level4.mp3");
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 
 		if (levelLabel != null)
 		{
-			levelLabel.Text = $"Žaidimo lygis: 2 / 4";
+			levelLabel.Text = $"Žaidimo lygis: 4 / 4"; 
 		}
 		else
 		{
@@ -35,7 +35,7 @@ public partial class Level2 : Node
 		{
 			if (mouseEvent.ButtonIndex == MouseButton.Left || mouseEvent.ButtonIndex == MouseButton.Right)
 			{
-				//GD.Print(" Mouse button pressed, but doing nothing."); //  No action taken
+				//GD.Print(" Mouse button pressed, but doing nothing."); // No action taken
 			}
 		}
 	}
