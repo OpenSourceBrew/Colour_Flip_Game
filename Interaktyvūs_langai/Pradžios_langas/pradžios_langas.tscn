@@ -81,6 +81,7 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="Button" type="Button" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)

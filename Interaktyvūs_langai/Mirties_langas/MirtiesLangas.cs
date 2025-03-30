@@ -4,7 +4,6 @@ using System;
 public partial class MirtiesLangas : Control
 {
 	private AnimationPlayer animationPlayer;
-
 	public override void _Ready()
 	{
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
@@ -40,17 +39,13 @@ public partial class MirtiesLangas : Control
 		}
 	}
 
-	private void TestEsc()
+	private void TestDeath()
 	{
-		var mirtiesZona = GetNode<MirtiesZona>($"../../MirtiesZona");
-		if (mirtiesZona._on_body_entered($"../../CharacterBody2D") && !GetTree().Paused)
+		if (!GetTree().Paused)
 		{
 			Pause();
 		}
-		else if (mirtiesZona._on_body_entered($"../../CharacterBody2D") && GetTree().Paused)
-		{
-			Resume();
-		}
+	
 	}
 
 
@@ -68,6 +63,6 @@ public partial class MirtiesLangas : Control
 
 	public override void _Process(double delta)
 	{
-		TestEsc();
+		
 	}
 }

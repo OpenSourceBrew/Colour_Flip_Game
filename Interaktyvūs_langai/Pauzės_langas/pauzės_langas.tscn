@@ -194,7 +194,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6cfpf")
 text = "Grįžti į meniu
 "
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3mudk")
 }

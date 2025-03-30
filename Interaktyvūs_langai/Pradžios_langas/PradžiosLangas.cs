@@ -53,4 +53,26 @@ public partial class PradžiosLangas : Control
 	}
 5efcd14 (Beveik padarytas langas)
 	
+	// Called when the node enters the scene tree for the first time.
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+	
+	public void _on_pradeti_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Lygių_dizainai/1_Lygis.tscn");
+	}
+	
+	public void _on_nustatymai_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Instrukcijų_langas/instrukcijų_langas.tscn");
+	}
+	
+	public void _on_iseiti_pressed()
+	{
+		GetTree().Quit();
+	}
+	
 }

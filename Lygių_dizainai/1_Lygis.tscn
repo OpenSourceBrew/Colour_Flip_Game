@@ -1,18 +1,12 @@
-[gd_scene load_steps=18 format=4 uid="uid://g51d3cgk8ps0"]
+[gd_scene load_steps=12 format=4 uid="uid://g51d3cgk8ps0"]
 
-[ext_resource type="Script" path="res://Lygių_dizainai/Level1.cs" id="1_0vrfc"]
 [ext_resource type="Texture2D" uid="uid://brup1bpr8rv60" path="res://Fonas/background 1.png" id="1_5mv7i"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_in8t5"]
-[ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_rvxdf"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_gn6dt"]
 [ext_resource type="Texture2D" uid="uid://7kmrweqrm81l" path="res://Blokai/Ship_portal_32x32.png" id="4_dii40"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_5gaxv"]
-[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="6_xknox"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="7_7whag"]
-[ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="8_3tqgo"]
-[ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="8_5p1cy"]
+[ext_resource type="PackedScene" uid="uid://cbe58ogvoi0l3" path="res://Collectables/collectable.tscn" id="8_78pao"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="9_ul4bv"]
-[ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="12_mmm83"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttaig"]
 texture = ExtResource("2_in8t5")
@@ -234,13 +228,9 @@ texture = ExtResource("3_gn6dt")
 9:4/0 = 0
 10:4/0 = 0
 12:4/0 = 0
-12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:4/0 = 0
-13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:4/0 = 0
-14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:4/0 = 0
-15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:4/0 = 0
 18:4/0 = 0
 19:4/0 = 0
@@ -257,13 +247,9 @@ texture = ExtResource("3_gn6dt")
 9:5/0 = 0
 10:5/0 = 0
 12:5/0 = 0
-12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:5/0 = 0
-13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:5/0 = 0
-14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:5/0 = 0
-15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:5/0 = 0
 18:5/0 = 0
 19:5/0 = 0
@@ -276,11 +262,8 @@ texture = ExtResource("3_gn6dt")
 7:6/0 = 0
 8:6/0 = 0
 13:6/0 = 0
-13:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:6/0 = 0
-14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:6/0 = 0
-15:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:6/0 = 0
 18:6/0 = 0
 19:6/0 = 0
@@ -374,149 +357,75 @@ sources/1 = SubResource("TileSetAtlasSource_ttaig")
 sources/2 = SubResource("TileSetAtlasSource_n3r70")
 sources/4 = SubResource("TileSetAtlasSource_8bc8q")
 
-[node name="Node" type="Node"]
-script = ExtResource("1_0vrfc")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_rvxdf")
-autoplay = true
+[node name="Node2" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 552.0
-offset_bottom = -25.0
+offset_right = 592.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5mv7i")
 expand_mode = 1
-flip_v = true
-
-[node name="PointLight" type="PointLight2D" parent="TextureRect"]
-show_behind_parent = true
-position = Vector2(456, 151)
-scale = Vector2(0.406968, 0.276635)
-color = Color(0.035676, 0.102498, 0.439003, 1)
-energy = 2.0
-shadow_enabled = true
-texture = ExtResource("12_mmm83")
-texture_scale = 1.5
-
-[node name="PointLight2" type="PointLight2D" parent="TextureRect"]
-show_behind_parent = true
-position = Vector2(973, 171)
-scale = Vector2(0.406968, 0.321076)
-color = Color(0.960272, 0.568661, 0.646447, 1)
-shadow_enabled = true
-texture = ExtResource("12_mmm83")
-
-[node name="PointLight3" type="PointLight2D" parent="TextureRect"]
-show_behind_parent = true
-position = Vector2(1137, 118)
-scale = Vector2(0.406968, 0.276635)
-color = Color(0.0132396, 0.28491, 0.0226293, 1)
-energy = 2.0
-shadow_enabled = true
-texture = ExtResource("12_mmm83")
-
-[node name="PointLight4" type="PointLight2D" parent="TextureRect"]
-show_behind_parent = true
-position = Vector2(168, 115)
-scale = Vector2(0.406968, 0.276635)
-color = Color(1, 0.152821, 0.558677, 1)
-energy = 2.0
-shadow_enabled = true
-texture = ExtResource("12_mmm83")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(-45, -290)
-scale = Vector2(2.963, 3)
+scale = Vector2(3.02355, 3.06108)
 tile_map_data = PackedByteArray("AAABAAsAAQAJAAEAAAABAAwAAQAAAAMAAAABAA0AAQABAAIAAAACAAwAAQAJAAEAAAACAA0AAQABAAIAAAADAAwAAQAJAAEAAAADAA0AAQAIAAAAAAAEAAwAAQAJAAEAAAAEAA0AAQAIAAAAAAAFAAwAAQAJAAEAAAAFAA0AAQAIAAAAAAAGAAwAAQAAAAMAAAAGAA0AAQABAAIAAAAHAAwAAQABAAMAAAAHAA0AAQABAAIAAAAIAA0AAQAIAAAAAAAJAA0AAQAIAAAAAAAKAAsAAQAJAAEAAAAKAAwAAQAAAAMAAAAKAA0AAQABAAIAAAALAAwAAQABAAMAAAALAA0AAQACAAIAAAAMAAoAAQAGAAEAAAAMAAwAAQAAAAMAAAAMAA0AAQADAAIAAAANAAoAAQAGAAEAAAANAAwAAQABAAMAAAANAA0AAQABAAIAAAAOAAoAAQAJAAEAAAAOAAwAAQAAAAMAAAAOAA0AAQACAAIAAAAPAAwAAQABAAMAAAAPAA0AAQADAAIAAAAQAAwAAQAJAAEAAAAQAA0AAQAIAAAAAAARAAcAAQAJAAEAAAARAAwAAQAGAAEAAAARAA0AAQAIAAAAAAASAAcAAQAJAAEAAAASAAwAAQAGAAEAAAASAA0AAQAIAAAAAAATAAcAAQAJAAEAAAATAAwAAQAGAAEAAAATAA0AAQAIAAAAAAAUAAcAAQAJAAEAAAAUAAwAAQAGAAEAAAAUAA0AAQAIAAAAAAAVAAcAAQAJAAEAAAAVAAwAAQAJAAEAAAAVAA0AAQAIAAAAAAAWAAwAAQAAAAMAAAAWAA0AAQACAAIAAAAXAAwAAQABAAMAAAAXAA0AAQADAAIAAAAYAAoAAQAJAAEAAAAYAAwAAQAAAAMAAAAYAA0AAQABAAIAAAAZAAoAAQAJAAEAAAAZAAwAAQABAAMAAAAZAA0AAQACAAIAAAAaAAoAAQAJAAEAAAAaAAwAAQAAAAMAAAAaAA0AAQADAAIAAAAbAAoAAQAJAAEAAAAbAAwAAQABAAMAAAAbAA0AAQADAAIAAAAcAAwAAQAAAAMAAAAdAAwAAQAJAAEAAAAeAAwAAQAJAAEAAAAfAAwAAQAJAAEAAAAgAAwAAQAGAAEAAAAhAAwAAQAGAAEAAAALAAoAAQAJAAEAAAAPAAsAAQAJAAEAAAAQAAcAAQAJAAEAAAAWAAsAAQAJAAEAAAAXAAoAAQAJAAEAAAAcAAsAAQAJAAEAAAAiAAwAAQAGAAEAAAAjAAcAAQAJAAEAAAAfAAcAAQAJAAEAAAAgAAcAAQAJAAEAAAAhAAcAAQAJAAEAAAAiAAcAAQAJAAEAAAAJAAwAAQAJAAEAAAAIAAwAAQAJAAEAAAAAAAUAAQAIAAAAAAAAAAYAAQAIAAAAAAAAAAcAAQAIAAAAAAAAAAgAAQAIAAAAAAAAAAkAAQAIAAAAAAAAAAoAAQAIAAAAAAAAAAsAAQAIAAAAAAAAAAwAAQAIAAAAAAAAAA0AAQAIAAAAAAAAAA4AAQAIAAAAAAAAAA8AAQAIAAAAAAAAABAAAQAIAAAAAAAAABEAAQAIAAAAAAAAABIAAQAIAAAAAAAAABMAAQAIAAAAAAABABMAAQAIAAAAAAACABMAAQAIAAAAAAADABMAAQAIAAAAAAAEABMAAQAIAAAAAAAFABMAAQAIAAAAAAAGABMAAQAIAAAAAAAHABMAAQAIAAAAAAAIABMAAQAIAAAAAAAJABMAAQAIAAAAAAAKABMAAQAIAAAAAAALABMAAQAIAAAAAAAMABMAAQAIAAAAAAANABMAAQAIAAAAAAAOABMAAQAIAAAAAAAPABMAAQAIAAAAAAAQABMAAQAIAAAAAAARABMAAQAIAAAAAAASABMAAQAIAAAAAAATABMAAQAIAAAAAAAUABMAAQAIAAAAAAAVABMAAQAIAAAAAAAWABMAAQAIAAAAAAAXABMAAQAIAAAAAAAYABMAAQAIAAAAAAAZABMAAQAIAAAAAAAaABMAAQAIAAAAAAAbABMAAQAIAAAAAAAcABMAAQAIAAAAAAAdABMAAQAIAAAAAAAeABMAAQAIAAAAAAAfABMAAQAIAAAAAAAgABMAAQAIAAAAAAAkABIAAQAIAAAAAAAkABEAAQAIAAAAAAAkABAAAQAIAAAAAAAkAA8AAQAIAAAAAAAkAA4AAQAIAAAAAAAkAA0AAQAIAAAAAAAkAAwAAQAIAAAAAAAkAAsAAQAIAAAAAAAkAAoAAQAIAAAAAAAkAAkAAQAIAAAAAAAkAAgAAQAIAAAAAAAkAAcAAQAIAAAAAAAkAAYAAQAIAAAAAAAkAAUAAQAIAAAAAAABAAUAAQAIAAAAAAACAAUAAQAIAAAAAAAEAAUAAQAIAAAAAAADAAUAAQAIAAAAAAAFAAUAAQAIAAAAAAAGAAUAAQAIAAAAAAAHAAUAAQAIAAAAAAAIAAUAAQAIAAAAAAAJAAUAAQAIAAAAAAAKAAUAAQAIAAAAAAALAAUAAQAIAAAAAAAMAAUAAQAIAAAAAAANAAUAAQAIAAAAAAAOAAUAAQAIAAAAAAAPAAUAAQAIAAAAAAAQAAUAAQAIAAAAAAARAAUAAQAIAAAAAAASAAUAAQAIAAAAAAATAAUAAQAIAAAAAAAUAAUAAQAIAAAAAAAVAAUAAQAIAAAAAAAWAAUAAQAIAAAAAAAXAAUAAQAIAAAAAAAYAAUAAQAIAAAAAAAZAAUAAQAIAAAAAAAaAAUAAQAIAAAAAAAbAAUAAQAIAAAAAAAcAAUAAQAIAAAAAAAdAAUAAQAIAAAAAAAeAAUAAQAIAAAAAAAfAAUAAQAIAAAAAAAgAAUAAQAIAAAAAAAhAAUAAQAIAAAAAAAiAAUAAQAIAAAAAAAjAAUAAQAIAAAAAAAjAAYAAQAIAAAAAAAjAAoAAQAIAAAAAAAjAAsAAQAIAAAAAAAjAAwAAQAIAAAAAAAjAA0AAQAIAAAAAAAiAA0AAQAIAAAAAAAhAA0AAQAIAAAAAAAgAA0AAQAIAAAAAAAfAA0AAQAIAAAAAAAeAA0AAQAIAAAAAAAdAA0AAQAIAAAAAAAcAA0AAQAIAAAAAAAkABMAAQAIAAAAAAAjABMAAQAIAAAAAAAiABMAAQAIAAAAAAAhABMAAQAIAAAAAAA=")
 tile_set = SubResource("TileSet_o8qmb")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_5gaxv")]
-position = Vector2(88, 210)
+position = Vector2(83, 223)
 safe_margin = 0.001
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(88, 45)
+position = Vector2(45, 50)
+offset = Vector2(150, -90)
 zoom = Vector2(1.5, 1.5)
-limit_left = -30
-limit_top = -50
-limit_right = 1700
+limit_left = -190
+limit_top = 45
+limit_right = 1600
 limit_bottom = 685
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("6_xknox")
 volume_db = -16.0
-pitch_scale = 0.7
+pitch_scale = 1.5
 autoplay = true
-parameters/looping = true
 
 [node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("7_7whag")
 volume_db = -16.0
 
-[node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("8_3tqgo")
+[node name="Collectable" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(369, 282)
 
-[node name="Portal" parent="." instance=ExtResource("9_ul4bv")]
-position = Vector2(1603, 115)
+[node name="Collectable2" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(656, 181)
 
-[node name="PointLight2D" type="PointLight2D" parent="Portal"]
-texture_filter = 1
-position = Vector2(31, 28)
-scale = Vector2(0.244181, 0.147501)
-color = Color(1, 1, 0.101961, 1)
-shadow_enabled = true
-texture = ExtResource("12_mmm83")
-texture_scale = 2.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauzėsLangas" parent="CanvasLayer" instance=ExtResource("8_5p1cy")]
-anchors_preset = -1
-anchor_left = 0.103299
-anchor_top = -0.0385802
-anchor_right = 0.875
-anchor_bottom = 0.967593
-offset_left = 20.9995
-offset_top = 17.0
-offset_right = 20.9995
-offset_bottom = 17.0
-metadata/_edit_use_anchors_ = true
+[node name="Collectable3" parent="." instance=ExtResource("8_78pao")]
+position = Vector2(947, 280)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="UI"]
-texture_filter = 1
-anchors_preset = -1
-anchor_left = 0.0416667
-anchor_top = 0.118827
-anchor_right = 0.199653
-anchor_bottom = 0.229938
-offset_left = -27.0
-offset_top = -54.0
-offset_right = -27.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 262.0
+offset_bottom = 139.0
 
 [node name="InfoLabel" type="Label" parent="UI/Panel"]
-texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = -28.0
-offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 25
+text = "Points: 0
+Level: 1"
 horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="Portal" parent="." instance=ExtResource("9_ul4bv")]
+position = Vector2(1639, 134)
