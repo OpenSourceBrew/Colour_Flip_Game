@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnr7uhbqm5s3g"]
+
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level5.cs" id="1_fp8ey"]
 [ext_resource type="Texture2D" uid="uid://xipgb15nnhq4" path="res://Fonas/5fTiXx.jpg" id="1_sqlm5"]
