@@ -1,13 +1,12 @@
 using Godot;
 using System;
 
-public partial class PauzėsLangas : Control
+public partial class MirtiesLangas : Control
 {
 	private AnimationPlayer animationPlayer;
-
 	public override void _Ready()
 	{
-		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer1");
+		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		if (animationPlayer != null)
 		{
 			animationPlayer.Play("RESET");
@@ -40,22 +39,15 @@ public partial class PauzėsLangas : Control
 		}
 	}
 
-	private void TestEsc()
+	private void TestDeath()
 	{
-		if (Input.IsActionJustPressed("esc") && !GetTree().Paused)
+		if (!GetTree().Paused)
 		{
 			Pause();
 		}
-		else if (Input.IsActionJustPressed("esc") && GetTree().Paused)
-		{
-			Resume();
-		}
+	
 	}
 
-	private void _on_testi_pressed()
-	{
-		Resume();
-	}
 
 	private void _on_pradeti_is_naujo_pressed()
 	{
@@ -71,6 +63,6 @@ public partial class PauzėsLangas : Control
 
 	public override void _Process(double delta)
 	{
-		TestEsc();
+		
 	}
 }
