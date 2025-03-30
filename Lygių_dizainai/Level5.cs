@@ -10,14 +10,14 @@ public partial class Level5 : Node
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level4.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level2.mp3");
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 
 		if (levelLabel != null)
 		{
-			levelLabel.Text = $"Žaidimo lygis: 4 / 4"; 
+			levelLabel.Text = $"Žaidimo lygis: 5 / 8"; 
 		}
 		else
 		{
