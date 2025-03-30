@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://bvmpa5qkyq6f2"]
+[gd_scene load_steps=18 format=4 uid="uid://bvmpa5qkyq6f2"]
 
+[ext_resource type="Script" path="res://Lygių_dizainai/Level8.cs" id="1_cbj4m"]
 [ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level6_7.mp3" id="1_quo1e"]
 [ext_resource type="Texture2D" uid="uid://c7kafoxntjby4" path="res://Fonas/hcMld5.png" id="2_rlulj"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="3_gs4ar"]
@@ -632,6 +633,7 @@ sources/1 = SubResource("TileSetAtlasSource_8gtjv")
 sources/2 = SubResource("TileSetAtlasSource_k11po")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_cbj4m")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_quo1e")
