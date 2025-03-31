@@ -357,15 +357,15 @@ layer_0/tile_data = PackedInt32Array(0, 65537, 9, 1, 65537, 9, 2, 65537, 9, 3, 6
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_xdbyc")]
 texture_filter = 1
-position = Vector2(1007, 961)
+position = Vector2(1046, 966)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(74, 48)
 offset = Vector2(150, 0)
 zoom = Vector2(1.5, 1.5)
-limit_left = 90
-limit_top = 110
-limit_right = 1825
+limit_left = -70
+limit_top = 70
+limit_right = 1700
 limit_bottom = 1100
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
