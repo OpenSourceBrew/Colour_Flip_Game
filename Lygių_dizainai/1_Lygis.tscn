@@ -451,14 +451,12 @@ limit_bottom = 685
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("6_xknox")
-volume_db = -16.0
 pitch_scale = 0.7
 autoplay = true
 parameters/looping = true
 
 [node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("7_7whag")
-volume_db = -16.0
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("8_3tqgo")
@@ -507,7 +505,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="InfoLabel" type="Label" parent="UI/Panel"]
-texture_filter = 4
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

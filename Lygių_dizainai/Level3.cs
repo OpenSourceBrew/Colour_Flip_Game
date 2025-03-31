@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level3 : Node
+public partial class Level3 : LevelBase
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
@@ -16,14 +16,9 @@ public partial class Level3 : Node
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 
-		if (levelLabel != null)
-		{
-			levelLabel.Text = $"Žaidimo lygis: 3 / 8"; 
-		}
-		else
-		{
-			GD.PrintErr("❌ ERROR: LevelLabel not found in scene!");
-		}
+		var global = (GlobalState)GetNode("/root/GlobalState");
+		global.currentLevel = 3;
+		base._Ready();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

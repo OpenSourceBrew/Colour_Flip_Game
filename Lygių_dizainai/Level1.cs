@@ -1,10 +1,12 @@
 using Godot;
 using System;
 
-public partial class Level1 : Node
+public partial class Level1 : LevelBase
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
+	//private int totalLevels = 8;
+	//private int lives = 0;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,17 +17,11 @@ public partial class Level1 : Node
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
-
-		if (levelLabel != null)
-		{
-			levelLabel.Text = $"Žaidimo lygis: 1 / 8";
-		}
-		else
-		{
-			GD.PrintErr("Error: LevelLabel not found in scene!");
-		}
+		
+		var global = (GlobalState)GetNode("/root/GlobalState");
+		global.currentLevel = 1;
+		base._Ready(); 
 	}
-
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
