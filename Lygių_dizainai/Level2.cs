@@ -11,6 +11,7 @@ public partial class Level2 : Node
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
 		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level1_2.mp3");
+		backgroundMusic.VolumeDb = 0;
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
