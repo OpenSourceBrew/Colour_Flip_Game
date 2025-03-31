@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b3h74t7sd4dm4"]
+[gd_scene load_steps=19 format=4 uid="uid://b3h74t7sd4dm4"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level2.cs" id="1_7hlln"]
 [ext_resource type="Texture2D" uid="uid://n6e2ew3yh2e5" path="res://Fonas/background 3.png" id="1_dpe1x"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_eoxrv"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="9_xwnyc"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_mrx5i"]
-[ext_resource type="PackedScene" uid="uid://cgk0qw2svy8u8" path="res://Veikėjas/mirties mechanika/checkpoint.tscn" id="13_ehtsk"]
 [ext_resource type="Script" path="res://Veikėjas/mirties mechanika/checkpoint_manager.gd" id="14_uvyd0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc63r"]
@@ -273,14 +272,12 @@ limit_bottom = 815
 
 [node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("5_iuxh6")
-volume_db = -16.0
 pitch_scale = 0.7
 autoplay = true
 parameters/looping = true
 
 [node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("6_cmh3j")
-volume_db = -16.0
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("9_eoxrv")
@@ -319,9 +316,6 @@ script = SubResource("GDScript_wltuh")
 position = Vector2(1172, 690)
 shape = SubResource("RectangleShape2D_vwdob")
 
-[node name="Checkpoint" parent="." instance=ExtResource("13_ehtsk")]
-position = Vector2(213, 642)
-
 [node name="CheckpointManager" type="Node" parent="."]
 script = ExtResource("14_uvyd0")
 
@@ -340,7 +334,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="InfoLabel" type="Label" parent="UI/Panel"]
-texture_filter = 4
+texture_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

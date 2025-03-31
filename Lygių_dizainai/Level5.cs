@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level5 : Node
+public partial class Level5 : LevelBase
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
@@ -10,19 +10,14 @@ public partial class Level5 : Node
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level2.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level5_6.mp3");
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
-
-		if (levelLabel != null)
-		{
-			levelLabel.Text = $"Žaidimo lygis: 5 / 8"; 
-		}
-		else
-		{
-			GD.PrintErr("❌ ERROR: LevelLabel not found in scene!");
-		}
+		
+		var global = (GlobalState)GetNode("/root/GlobalState");
+		global.currentLevel = 5;
+		base._Ready();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

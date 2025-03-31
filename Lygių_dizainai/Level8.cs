@@ -1,28 +1,24 @@
 using Godot;
 using System;
 
-public partial class Level8 : Node
+public partial class Level8 : LevelBase
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level2.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level7_8.mp3");
 		backgroundMusic.VolumeDb = 0;
 		backgroundMusic.Play();
 		
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
-
-		if (levelLabel != null)
-		{
-			levelLabel.Text = $"Žaidimo lygis: 8 / 8"; 
-		}
-		else
-		{
-			GD.PrintErr("Error: LevelLabel not found in scene!");
-		}
+		
+		var global = (GlobalState)GetNode("/root/GlobalState");
+		global.currentLevel = 8;
+		base._Ready();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
