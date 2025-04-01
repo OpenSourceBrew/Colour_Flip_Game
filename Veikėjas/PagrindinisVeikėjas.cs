@@ -12,6 +12,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	private AnimatedSprite2D sprite2D;
 	private AudioStreamPlayer walkingAudio;
 	private AudioStreamPlayer jumpingAudio;
+	private AudioStreamPlayer gravityAudio;
 	
 	private bool can_control = true;
 	
@@ -21,6 +22,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
 		walkingAudio = GetNode<AudioStreamPlayer>("WalkingAudio");
 		jumpingAudio = GetNode<AudioStreamPlayer>("JumpingAudio");
+		gravityAudio = GetNode<AudioStreamPlayer>("GravityAudio");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -47,6 +49,11 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		// Gravity Change
 		if (Input.IsActionJustPressed("gravityChange"))
 		{
+			// **Play walking sound only if not already playing**
+			if (!gravityAudio.Playing)
+			{
+				gravityAudio.Play();
+			}
 			gravityDirection *= -1;
 			sprite2D.FlipV = (gravityDirection == -1);
 		}

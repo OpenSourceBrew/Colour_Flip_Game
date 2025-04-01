@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level4.cs" id="1_pt058"]
 [ext_resource type="Texture2D" uid="uid://cfevoafy6jghx" path="res://Fonas/background 4.png" id="1_yltbw"]
-[ext_resource type="AudioStream" uid="uid://dr3h2dm84dils" path="res://Muzika/Foninė_muzika/music_level3_4.mp3" id="2_p1c8j"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="2_pv4le"]
+[ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_q2jou"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="3_hbjo8"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="6_2xtda"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="7_iqouk"]
@@ -303,8 +303,8 @@ sources/5 = SubResource("TileSetAtlasSource_dkmjm")
 script = ExtResource("1_pt058")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_p1c8j")
-autoplay = true
+stream = ExtResource("2_q2jou")
+parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -344,6 +344,7 @@ stream = ExtResource("8_2cpmr")
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("11_ptmr1")
+pitch_scale = 2.0
 
 [node name="Portal" parent="." instance=ExtResource("8_kjlht")]
 position = Vector2(1024, 362)
@@ -405,5 +406,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Collectable" parent="." instance=ExtResource("13_ah7kj")]
-position = Vector2(645, 545)
+position = Vector2(716, 549)
 scale = Vector2(3, 3)

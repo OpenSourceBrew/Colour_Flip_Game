@@ -182,19 +182,20 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"Player\"):
-		get_node(\"../MirtiesLangas\").game_over()
+	pass
+	#if body.is_in_group(\"Player\"):
+#a		get_node(\"../MirtiesLangas\").game_over()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwdob"]
 size = Vector2(998, 60)
 
-[node name="Node2" type="Node"]
+[node name="Node" type="Node"]
 script = ExtResource("1_7hlln")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_utv34")
-autoplay = true
+parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -281,6 +282,7 @@ stream = ExtResource("6_cmh3j")
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("9_eoxrv")
+pitch_scale = 2.0
 
 [node name="Portal" parent="." instance=ExtResource("8_fixt2")]
 position = Vector2(1390, 244)

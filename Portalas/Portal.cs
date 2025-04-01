@@ -28,6 +28,15 @@ public partial class Portal : Node
 				// Tikriname, ar failas egzistuoja
 				if (ResourceLoader.Exists(nextLevelPath))
 				{
+					// PERKELIAME MUZIKĄ
+					var music = GetTree().CurrentScene.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
+					if (music != null && music.GetParent() != GetTree().Root)
+					{
+						music.GetParent().RemoveChild(music);
+						music.Name = "BackgroundMusic";
+						GetTree().Root.AddChild(music);
+					}
+					
 					GetTree().CallDeferred("change_scene_to_file", nextLevelPath);
 				}
 				else
