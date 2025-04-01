@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level5.cs" id="1_fp8ey"]
 [ext_resource type="Texture2D" uid="uid://xipgb15nnhq4" path="res://Fonas/5fTiXx.jpg" id="1_sqlm5"]
-[ext_resource type="AudioStream" uid="uid://dfxhm0y17kbxj" path="res://Muzika/Foninė_muzika/music_level5_6.mp3" id="2_dolld"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="2_rjb7e"]
+[ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_uy4kd"]
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="3_bubua"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="4_xdbyc"]
 [ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="5_bxtgy"]
@@ -331,8 +331,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
-		get_node(\"../CanvasLayer/MirtiesLangas\").TestDeath()
+	pass
+	#if body is CharacterBody2D:
+		#get_node(\"../CanvasLayer/MirtiesLangas\").TestDeath()
 			
 "
 
@@ -343,7 +344,8 @@ size = Vector2(31, 20)
 script = ExtResource("1_fp8ey")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_dolld")
+stream = ExtResource("2_uy4kd")
+parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -382,6 +384,7 @@ stream = ExtResource("6_jwqen")
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("7_a8ujj")
+pitch_scale = 2.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 

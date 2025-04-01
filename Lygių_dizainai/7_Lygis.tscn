@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://5i02gsljjni"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level7.cs" id="1_fkgek"]
-[ext_resource type="AudioStream" uid="uid://cmciw0blqawi1" path="res://Muzika/Foninė_muzika/music_level7_8.mp3" id="2_5cqk8"]
+[ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_x6v3c"]
 [ext_resource type="Texture2D" uid="uid://bik72iaxjgocr" path="res://Fonas/howxn0qns9861.webp" id="3_dpuku"]
 [ext_resource type="Texture2D" uid="uid://d1qy2asyxp0kt" path="res://Blokai/Platformer_Tileset_1.png" id="4_c0rg7"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="5_f1jb4"]
@@ -118,8 +118,8 @@ sources/0 = SubResource("TileSetAtlasSource_buxip")
 script = ExtResource("1_fkgek")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5cqk8")
-autoplay = true
+stream = ExtResource("2_x6v3c")
+parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -200,6 +200,7 @@ stream = ExtResource("7_dk2ak")
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("8_tsi08")
+pitch_scale = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

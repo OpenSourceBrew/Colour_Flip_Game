@@ -5,17 +5,30 @@ public partial class Level1 : LevelBase
 {
 	private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
-	//private int totalLevels = 8;
-	//private int lives = 0;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
+		//backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level3_4.mp3");
+		//backgroundMusic.VolumeDb = 0;
+		//backgroundMusic.Play();
+		
+		// Pašalinam ankstesnę (meniu) muziką, jei liko
+		var oldMusic = GetTree().Root.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
+		if (oldMusic != null)
+		{
+			oldMusic.Stop();
+			oldMusic.QueueFree(); // pašalinam seną muziką (menu)
+		}
+
+		// Paleidžiam naują muziką šiam lygiui
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
 		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level1_2.mp3");
 		backgroundMusic.VolumeDb = 0;
+		backgroundMusic.Name = "BackgroundMusic";
 		backgroundMusic.Play();
-		
+
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 		
 		var global = (GlobalState)GetNode("/root/GlobalState");
