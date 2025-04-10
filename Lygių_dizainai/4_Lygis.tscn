@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_ivlj7"]
 [ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="11_ptmr1"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_qbn12"]
-[ext_resource type="PackedScene" path="res://Collectables/heart_collectable.tscn" id="13_ah7kj"]
+[ext_resource type="PackedScene" uid="uid://ddixm1ali0eqb" path="res://Collectables/heart_collectable.tscn" id="13_ah7kj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_623fs"]
 texture = ExtResource("2_pv4le")
