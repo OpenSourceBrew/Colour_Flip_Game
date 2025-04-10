@@ -1,18 +1,15 @@
 using Godot;
 using System;
+using System.IO; // Reikalinga failų tikrinimui
 
 public partial class Portal : Node
 {
 	private AnimatedSprite2D sprite2D;
-	private PackedScene laimejimoLangasScene;
 
 	public override void _Ready()
 	{
 		sprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		sprite2D.Play("default");
-
-		// Pakraunam sceną iš failo
-		laimejimoLangasScene = GD.Load<PackedScene>("res://Interaktyvūs_langai/Laimėjimo_langas/LaimėjimoLangas.tscn");
 	}
 
 	private void _on_body_entered(Node2D body)
@@ -27,9 +24,11 @@ public partial class Portal : Node
 			{
 				int nextLevelNumber = currentLevelNumber + 1;
 				string nextLevelPath = $"res://Lygių_dizainai/{nextLevelNumber}_Lygis.tscn";
-
+				
+				// Tikriname, ar failas egzistuoja
 				if (ResourceLoader.Exists(nextLevelPath))
 				{
+					// PERKELIAME MUZIKĄ
 					var music = GetTree().CurrentScene.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
 					if (music != null && music.GetParent() != GetTree().Root)
 					{
@@ -37,39 +36,52 @@ public partial class Portal : Node
 						music.Name = "BackgroundMusic";
 						GetTree().Root.AddChild(music);
 					}
-
+					
 					GetTree().CallDeferred("change_scene_to_file", nextLevelPath);
 				}
 				else
 				{
-					ShowWinScreen(); // NEBĖRA DisplayGameCompletedMessage()
+					DisplayGameCompletedMessage();
 				}
 			}
 			else
 			{
-				GD.PrintErr($"Nepavyko ištraukti lygio numerio iš: {fileName}");
+				GD.PrintErr($"Failed to extract level number from file name: {fileName}");
 			}
 		}
 	}
 
-	private void ShowWinScreen()
-	{
-		if (laimejimoLangasScene == null)
-		{
-			GD.PrintErr("Nepavyko įkelti LaimėjimoLangas scenos!");
-			return;
-		}
+private void DisplayGameCompletedMessage()
+{
+	// Sukuriame Label ir nustatome tekstą
+	Label messageLabel = new Label();
+	messageLabel.Text = "SVEIKINAME! TU PERĖJAI ŽAIDIMĄ!";
+	messageLabel.AddThemeColorOverride("font_color", new Color(1, 1, 1)); // Balta spalva
+	messageLabel.AddThemeFontSizeOverride("font_size", 30); // Šrifto dydis 30
 
-		var winWindow = laimejimoLangasScene.Instantiate();
+	// Nustatome, kad tekstas būtų kairėje
+	messageLabel.HorizontalAlignment = HorizontalAlignment.Left;
+	messageLabel.VerticalAlignment = VerticalAlignment.Center;
 
-		if (winWindow is LaimėjimoLangas langas)
-		{
-			GetTree().Root.AddChild(langas);
-			langas.Pause(); // Sukuria blur ir pauzuoja žaidimą
-		}
-		else
-		{
-			GD.PrintErr("Scena neturi LaimėjimoLangas skripto!");
-		}
-	}
+	// Sukuriame Control konteinerį
+	Control container = new Control();
+
+	// Nustatome, kad container būtų centre
+	container.AnchorLeft = 0.25f;
+	container.AnchorTop = 0.5f;
+	container.AnchorRight = 0.5f;
+	container.AnchorBottom = 0.5f;
+
+	// Pridedame label į container
+	container.AddChild(messageLabel);
+
+	// Sukuriame CanvasLayer, kad elementas būtų rodomas virš kitų objektų
+	CanvasLayer canvas = new CanvasLayer();
+	canvas.AddChild(container);
+
+	// Pridedame CanvasLayer į pagrindinį medį, kad jis būtų matomas ekrane
+	GetTree().Root.AddChild(canvas);
+}
+
+
 }
