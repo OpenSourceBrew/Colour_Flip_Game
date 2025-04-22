@@ -38,7 +38,7 @@ frame_5/duration = 1.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bn827"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_167r8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aegdv"]
 texture = ExtResource("7_e08oj")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -155,7 +155,7 @@ texture = ExtResource("7_e08oj")
 8:7/0 = 0
 9:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yburi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmee5"]
 texture = ExtResource("8_dfggl")
 0:0/0 = 0
 1:0/0 = 0
@@ -302,7 +302,7 @@ texture = ExtResource("8_dfggl")
 19:10/0 = 0
 20:10/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obdis"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmp2r"]
 texture = ExtResource("9_50vk1")
 0:0/0 = 0
 1:0/0 = 0
@@ -2069,7 +2069,7 @@ texture = ExtResource("9_50vk1")
 40:41/0 = 0
 41:41/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpfbo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wd7or"]
 texture = ExtResource("10_q1g3j")
 0:0/0 = 0
 1:0/0 = 0
@@ -2106,10 +2106,10 @@ texture = ExtResource("10_q1g3j")
 
 [sub_resource type="TileSet" id="TileSet_4bry3"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_167r8")
-sources/1 = SubResource("TileSetAtlasSource_yburi")
-sources/2 = SubResource("TileSetAtlasSource_obdis")
-sources/3 = SubResource("TileSetAtlasSource_jpfbo")
+sources/0 = SubResource("TileSetAtlasSource_aegdv")
+sources/1 = SubResource("TileSetAtlasSource_xmee5")
+sources/2 = SubResource("TileSetAtlasSource_jmp2r")
+sources/3 = SubResource("TileSetAtlasSource_wd7or")
 
 [node name="Node" type="Node"]
 script = ExtResource("1_oj3q4")
