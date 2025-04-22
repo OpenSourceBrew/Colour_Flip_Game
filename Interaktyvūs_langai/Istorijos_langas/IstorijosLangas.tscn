@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://euxke62j7t2n"]
+
+[ext_resource type="Script" path="res://Interaktyvūs_langai/Istorijos_langas/IstorijosLangas.cs" id="1_o77nm"]
+[ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="2_7nths"]
+[ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_d41aw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4dis"]
+texture = ExtResource("2_7nths")
+modulate_color = Color(0.344076, 0.344076, 0.344076, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsua6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ayhy"]
+bg_color = Color(0.2692, 0.32135, 0.507908, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxbwj"]
+bg_color = Color(0.166755, 0.203712, 0.337551, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aviwt"]
+bg_color = Color(0.450741, 0.51468, 0.729524, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.729412)
+shadow_size = 10
+
+[node name="IstorijosLangas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o77nm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -18.0
+offset_right = 1.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x4dis")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -304.0
+offset_right = 164.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
+theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
+theme_override_fonts/font = ExtResource("3_d41aw")
+theme_override_font_sizes/font_size = 60
+text = "Žadimo istorija"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -334.0
+offset_top = -203.0
+offset_right = 458.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_d41aw")
+theme_override_font_sizes/normal_font_size = 27
+text = "Kadaise gyveno Pelėdukas.
+
+Pelėdukas eidamas namo nusprendė nueiti greitesniu keliu - pro mišką. 
+
+Tačiau, Pelėdukas, nežinodamas miško pavojų, įkrito į didžiulę skylę!
+Ta skylė buvo įėjimas į senai pamirštus ir apleistus urvus.
+
+Dabar Pelėdukas turi surasti išėjimą iš šių urvų su tavo pagalba!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 444.0
+offset_right = 681.0
+offset_bottom = 493.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.549872, 0.609935, 0.803816, 1)
+theme_override_colors/font_pressed_color = Color(0.44666, 0.510614, 0.725879, 1)
+theme_override_colors/font_focus_color = Color(0.206277, 0.249404, 0.405055, 1)
+theme_override_colors/font_color = Color(0.166755, 0.203712, 0.337551, 1)
+theme_override_fonts/font = ExtResource("3_d41aw")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsua6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5ayhy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yxbwj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aviwt")
+text = "Pradėti žaidimą"
+
+[connection signal="pressed" from="Button" to="." method="_on_pradetizaidima_pressed"]

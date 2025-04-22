@@ -40,7 +40,7 @@ public partial class PradžiosLangas : Control
 			music.Stop();
 			music.QueueFree(); // pašalinam meniu muziką visiškai
 		}
-		GetTree().ChangeSceneToFile("res://Lygių_dizainai/1_Lygis.tscn");
+		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Istorijos_langas/IstorijosLangas.tscn");
 	}
 	
 	public void _on_nustatymai_pressed()
