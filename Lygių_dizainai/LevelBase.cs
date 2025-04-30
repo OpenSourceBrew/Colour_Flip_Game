@@ -4,7 +4,7 @@ using System;
 public partial class LevelBase : Node
 {
 	protected Label levelLabel;
-	protected int totalLevels = 8;
+	protected int totalLevels = 12;
 	
 	public override void _Ready()
 	{
@@ -30,7 +30,7 @@ public partial class LevelBase : Node
 							  //$"Gyvybės: {global.lives} / {global.maxLives}";
 		}
 	}
-	public void AddPoints(float value)
+	public void AddPoints(int value)
 	{
 		var global = (GlobalState)GetNode("/root/GlobalState");
 		global.lives += value;
