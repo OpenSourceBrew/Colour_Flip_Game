@@ -4,7 +4,7 @@ using System;
 public partial class Collectable : Area2D
 {
 	private AudioStreamPlayer pickupSound;
-	[Export] public float livesValue = 0.5f;
+	[Export] public int livesValue = 1;
 	
 	public override void _Ready()
 	{
