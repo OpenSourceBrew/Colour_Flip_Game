@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://euxke62j7t2n"]
+[gd_scene load_steps=10 format=3 uid="uid://euxke62j7t2n"]
 
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Istorijos_langas/IstorijosLangas.cs" id="1_o77nm"]
 [ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="2_7nths"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_d41aw"]
+[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_44jrh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4dis"]
 texture = ExtResource("2_7nths")
@@ -122,5 +123,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5ayhy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yxbwj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aviwt")
 text = "Pradėti žaidimą"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_44jrh")
 
 [connection signal="pressed" from="Button" to="." method="_on_pradetizaidima_pressed"]
