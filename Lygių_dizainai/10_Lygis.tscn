@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c20lennlk4p0n"]
+[gd_scene load_steps=31 format=4 uid="uid://c20lennlk4p0n"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level10.cs" id="1_ftva1"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="1_i02ty"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="10_qyw50"]
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_dym1b"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="12_lny4o"]
+[ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="14_dt07l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxafh"]
 texture = ExtResource("3_l8xjq")
@@ -633,6 +634,41 @@ sources/0 = SubResource("TileSetAtlasSource_qxafh")
 sources/1 = SubResource("TileSetAtlasSource_ypus5")
 sources/2 = SubResource("TileSetAtlasSource_kit5d")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffmbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pasx7"]
+size = Vector2(138.375, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0b84"]
+size = Vector2(138.203, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebwdf"]
+size = Vector2(47.5, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ifwv"]
+size = Vector2(49, 46.8125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6w40"]
+size = Vector2(46, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aitg"]
+size = Vector2(142, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tymnu"]
+size = Vector2(45.75, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdae"]
+size = Vector2(137.25, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_080v0"]
+size = Vector2(45.5, 48.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6jw"]
+size = Vector2(42.25, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1uc"]
+size = Vector2(287.875, 46.625)
+
 [node name="Node2" type="Node"]
 script = ExtResource("1_ftva1")
 
@@ -739,3 +775,58 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RespawnPoint" type="Node2D" parent="."]
+position = Vector2(104, 156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnPoint"]
+position = Vector2(79, 267)
+shape = SubResource("CapsuleShape2D_ffmbu")
+
+[node name="DeadlyBlock" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("14_dt07l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(118.813, 74)
+shape = SubResource("RectangleShape2D_pasx7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(263.898, 261)
+shape = SubResource("RectangleShape2D_s0b84")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(78, 645)
+shape = SubResource("RectangleShape2D_ebwdf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(455.5, 453)
+shape = SubResource("RectangleShape2D_0ifwv")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(312, 453)
+shape = SubResource("RectangleShape2D_g6w40")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(552, 262)
+shape = SubResource("RectangleShape2D_1aitg")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(407.125, 646)
+shape = SubResource("RectangleShape2D_tymnu")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(407.625, 74)
+shape = SubResource("RectangleShape2D_tfdae")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(264, 648)
+shape = SubResource("RectangleShape2D_080v0")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(552, 645)
+shape = SubResource("RectangleShape2D_gf6jw")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(961.063, 643)
+shape = SubResource("RectangleShape2D_mm1uc")

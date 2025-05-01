@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6jlb2xmu8oh5"]
+[gd_scene load_steps=21 format=3 uid="uid://b6jlb2xmu8oh5"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level6.cs" id="1_a0bhq"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_d8q1b"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="9_3ku4m"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="10_3l4s1"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="11_3y8ri"]
+[ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="12_07piu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3st4a"]
 texture = ExtResource("5_gl2ld")
@@ -114,6 +115,23 @@ texture = ExtResource("5_gl2ld")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3st4a")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wlgyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xivm"]
+size = Vector2(91, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c73wi"]
+size = Vector2(1136, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2eoq"]
+size = Vector2(236.5, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0eee"]
+size = Vector2(917.25, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4txc"]
+size = Vector2(50.5, 591.75)
+
 [node name="Node" type="Node"]
 script = ExtResource("1_a0bhq")
 
@@ -176,7 +194,7 @@ texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_tse2y")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 393216, 2, 65536, 393216, 2, 131072, 393216, 2, 196608, 393216, 2, 262144, 393216, 2, 327680, 393216, 2, 393216, 393216, 2, 458752, 393216, 2, 524288, 393216, 2, 589824, 393216, 2, 655360, 393216, 2, 23, 393216, 2, 65559, 393216, 2, 131095, 393216, 2, 196631, 393216, 2, 262167, 393216, 2, 327703, 393216, 2, 393239, 393216, 2, 458775, 393216, 2, 524311, 393216, 2, 589847, 393216, 2, 655383, 393216, 2, 1, 393216, 2, 2, 393216, 2, 3, 393216, 2, 4, 393216, 2, 5, 393216, 2, 6, 393216, 2, 7, 393216, 2, 8, 393216, 2, 9, 393216, 2, 10, 393216, 2, 11, 393216, 2, 12, 393216, 2, 13, 393216, 2, 14, 393216, 2, 15, 393216, 2, 16, 393216, 2, 17, 393216, 2, 18, 393216, 2, 19, 393216, 2, 20, 393216, 2, 21, 393216, 2, 22, 393216, 2, 720896, 393216, 2, 786432, 393216, 2, 786433, 393216, 2, 786434, 393216, 2, 786435, 393216, 2, 786436, 393216, 2, 786437, 393216, 2, 786438, 393216, 2, 786439, 393216, 2, 786440, 393216, 2, 786441, 393216, 2, 786442, 393216, 2, 786443, 393216, 2, 786444, 393216, 2, 786445, 393216, 2, 786446, 393216, 2, 786447, 393216, 2, 786448, 393216, 2, 786449, 393216, 2, 786450, 393216, 2, 786451, 393216, 2, 786452, 393216, 2, 786453, 393216, 2, 786454, 393216, 2, 786455, 393216, 2, 720919, 393216, 2, 524289, 393216, 0, 589825, 393216, 0, 655361, 393216, 0, 720897, 393216, 0, 720898, 393216, 0, 655364, 393216, 0, 655367, 393216, 0, 589833, 393216, 0, 524298, 393216, 0, 524299, 393216, 0, 524300, 393216, 0, 458756, 393216, 0, 458757, 393216, 0, 458758, 393216, 0, 458759, 393216, 0, 327693, 393216, 0, 327694, 393216, 0, 327695, 393216, 0, 327696, 393216, 0, 327697, 393216, 0, 327698, 393216, 0, 327699, 393216, 0, 327700, 393216, 0, 327701, 393216, 0, 327702, 393216, 0, 393238, 393216, 0, 458774, 393216, 0, 524310, 393216, 0, 589846, 393216, 0, 655382, 393216, 0, 655365, 327680, 0, 655366, 327680, 0, 524301, 327680, 0, 524302, 327680, 0, 524303, 327680, 0, 524304, 327680, 0, 524305, 327680, 0, 720899, 327680, 0, 720900, 327680, 0, 720901, 327680, 0, 720902, 327680, 0, 720903, 327680, 0, 720904, 327680, 0, 720905, 327680, 0, 720906, 327680, 0, 720907, 327680, 0, 720908, 327680, 0, 720909, 327680, 0, 720910, 327680, 0, 720911, 327680, 0, 720912, 327680, 0, 720913, 327680, 0, 720914, 327680, 0, 720915, 327680, 0, 720916, 327680, 0, 720917, 327680, 0, 720918, 393216, 0, 327692, 393216, 0)
+layer_0/tile_data = PackedInt32Array(0, 393216, 2, 65536, 393216, 2, 131072, 393216, 2, 196608, 393216, 2, 262144, 393216, 2, 327680, 393216, 2, 393216, 393216, 2, 458752, 393216, 2, 524288, 393216, 2, 589824, 393216, 2, 655360, 393216, 2, 23, 393216, 2, 65559, 393216, 2, 131095, 393216, 2, 196631, 393216, 2, 262167, 393216, 2, 327703, 393216, 2, 393239, 393216, 2, 458775, 393216, 2, 524311, 393216, 2, 589847, 393216, 2, 655383, 393216, 2, 1, 393216, 2, 2, 393216, 2, 3, 393216, 2, 4, 393216, 2, 5, 393216, 2, 6, 393216, 2, 7, 393216, 2, 8, 393216, 2, 9, 393216, 2, 10, 393216, 2, 11, 393216, 2, 12, 393216, 2, 13, 393216, 2, 14, 393216, 2, 15, 393216, 2, 16, 393216, 2, 17, 393216, 2, 18, 393216, 2, 19, 393216, 2, 20, 393216, 2, 21, 393216, 2, 22, 393216, 2, 720896, 393216, 2, 786432, 393216, 2, 786433, 393216, 2, 786434, 393216, 2, 786435, 393216, 2, 786436, 393216, 2, 786437, 393216, 2, 786438, 393216, 2, 786439, 393216, 2, 786440, 393216, 2, 786441, 393216, 2, 786442, 393216, 2, 786443, 393216, 2, 786444, 393216, 2, 786445, 393216, 2, 786446, 393216, 2, 786447, 393216, 2, 786448, 393216, 2, 786449, 393216, 2, 786450, 393216, 2, 786451, 393216, 2, 786452, 393216, 2, 786453, 393216, 2, 786454, 393216, 2, 786455, 393216, 2, 720919, 393216, 2, 524289, 393216, 0, 589825, 393216, 0, 655361, 393216, 0, 720897, 393216, 0, 720898, 393216, 0, 655364, 393216, 0, 655367, 393216, 0, 589833, 393216, 0, 524298, 393216, 0, 524299, 393216, 0, 524300, 393216, 0, 458756, 393216, 0, 458757, 393216, 0, 458758, 393216, 0, 458759, 393216, 0, 327693, 393216, 0, 327694, 393216, 0, 327695, 393216, 0, 327696, 393216, 0, 327697, 393216, 0, 327698, 393216, 0, 327699, 393216, 0, 327700, 393216, 0, 327701, 393216, 0, 327702, 393216, 0, 393238, 393216, 0, 458774, 393216, 0, 524310, 393216, 0, 589846, 393216, 0, 655382, 393216, 0, 655365, 327680, 0, 655366, 327680, 0, 524301, 327680, 0, 524302, 327680, 0, 524303, 327680, 0, 524304, 327680, 0, 524305, 327680, 0, 720899, 327680, 0, 720900, 327680, 0, 720901, 327680, 0, 720902, 327680, 0, 720903, 327680, 0, 720904, 327680, 0, 720905, 327680, 0, 720906, 327680, 0, 720907, 327680, 0, 720908, 327680, 0, 720909, 327680, 0, 720910, 327680, 0, 720911, 327680, 0, 720912, 327680, 0, 720913, 327680, 0, 720914, 327680, 0, 720915, 327680, 0, 720916, 327680, 0, 720917, 327680, 0, 720918, 393216, 0, 327692, 393216, 0, 655368, 393216, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_gwxvl")]
 position = Vector2(77, 454)
@@ -254,3 +272,38 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RespawnPoint" type="Node2D" parent="."]
+position = Vector2(77, 454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnPoint"]
+position = Vector2(79, 267)
+shape = SubResource("CapsuleShape2D_wlgyx")
+
+[node name="DeadlyBlock" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("12_07piu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(288, 501)
+shape = SubResource("RectangleShape2D_6xivm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(580, 25)
+shape = SubResource("RectangleShape2D_c73wi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(745.75, 405)
+shape = SubResource("RectangleShape2D_e2eoq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(603.375, 550.5)
+shape = SubResource("RectangleShape2D_h0eee")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(25, 324)
+shape = SubResource("RectangleShape2D_x4txc")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(1127, 326.125)
+shape = SubResource("RectangleShape2D_x4txc")
