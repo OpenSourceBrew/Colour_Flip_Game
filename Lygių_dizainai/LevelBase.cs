@@ -12,7 +12,7 @@ public partial class LevelBase : Node
 		UpdateInfoLabel();
 	}
 	
-	protected void UpdateInfoLabel()
+	public void UpdateInfoLabel()
 	{
 		var global = (GlobalState)GetNode("/root/GlobalState");
 		
