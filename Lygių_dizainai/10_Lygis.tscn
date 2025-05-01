@@ -37,6 +37,7 @@ texture = ExtResource("3_l8xjq")
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
 9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -632,7 +633,7 @@ sources/0 = SubResource("TileSetAtlasSource_qxafh")
 sources/1 = SubResource("TileSetAtlasSource_ypus5")
 sources/2 = SubResource("TileSetAtlasSource_kit5d")
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 script = ExtResource("1_ftva1")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
