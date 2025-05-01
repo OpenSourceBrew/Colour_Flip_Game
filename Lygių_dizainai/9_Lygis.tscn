@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d16ny5d6yww4m"]
+[gd_scene load_steps=40 format=4 uid="uid://d16ny5d6yww4m"]
 
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="1_5nss0"]
 [ext_resource type="Script" path="res://Lygių_dizainai/Level9.cs" id="1_urdhn"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="14_74y8w"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="15_hisb5"]
 [ext_resource type="PackedScene" uid="uid://ddixm1ali0eqb" path="res://Collectables/heart_collectable.tscn" id="17_ih71b"]
+[ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="18_5hb7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_la0tr"]
 texture = ExtResource("3_f4gpw")
@@ -938,6 +939,47 @@ sources/4 = SubResource("TileSetAtlasSource_ivigc")
 sources/6 = SubResource("TileSetAtlasSource_8fg6m")
 sources/3 = SubResource("TileSetAtlasSource_1sice")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dvod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5hds"]
+size = Vector2(194.75, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8f1f"]
+size = Vector2(183.813, 50.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h1s"]
+size = Vector2(238.406, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vpkc"]
+size = Vector2(47.5, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfxjp"]
+size = Vector2(94, 46.8125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6fuf"]
+size = Vector2(86, 47.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qv8b4"]
+size = Vector2(46.5625, 479.828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mnyt"]
+size = Vector2(85, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h0u1"]
+size = Vector2(134.5, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1s43"]
+size = Vector2(53.5, 91.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_645fn"]
+size = Vector2(45.5, 48.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlgii"]
+size = Vector2(96.5, 46.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4yfr"]
+size = Vector2(87.75, 46.625)
+
 [node name="Node2" type="Node"]
 script = ExtResource("1_urdhn")
 
@@ -1077,3 +1119,74 @@ metadata/_edit_use_anchors_ = true
 [node name="Collectable" parent="." instance=ExtResource("17_ih71b")]
 position = Vector2(1080, 400)
 scale = Vector2(3, 3)
+
+[node name="RespawnPoint" type="Node2D" parent="."]
+position = Vector2(11, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnPoint"]
+position = Vector2(79, 267)
+shape = SubResource("CapsuleShape2D_6dvod")
+
+[node name="DeadlyBlock" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("18_5hb7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(773.625, 22)
+shape = SubResource("RectangleShape2D_w5hds")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(101.094, 456)
+shape = SubResource("RectangleShape2D_o8f1f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(553.797, 267)
+shape = SubResource("RectangleShape2D_l8h1s")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(362.25, 597)
+shape = SubResource("RectangleShape2D_0vpkc")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(241, 411.594)
+shape = SubResource("RectangleShape2D_vfxjp")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(288, 363)
+shape = SubResource("RectangleShape2D_b6fuf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(-20, 471)
+shape = SubResource("RectangleShape2D_qv8b4")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(1171, 404)
+shape = SubResource("RectangleShape2D_qv8b4")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(381, 314)
+shape = SubResource("RectangleShape2D_4mnyt")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(576, 502)
+shape = SubResource("RectangleShape2D_4mnyt")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(939, -20)
+shape = SubResource("RectangleShape2D_3h0u1")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(408, 292)
+shape = SubResource("RectangleShape2D_v1s43")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(457, 547)
+shape = SubResource("RectangleShape2D_645fn")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(723, 501)
+shape = SubResource("RectangleShape2D_rlgii")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(908.125, 596)
+shape = SubResource("RectangleShape2D_q4yfr")

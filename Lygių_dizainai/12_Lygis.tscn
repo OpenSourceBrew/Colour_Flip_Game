@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bhfgw7yg5rrmb"]
+[gd_scene load_steps=25 format=4 uid="uid://bhfgw7yg5rrmb"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level12.cs" id="1_qupgw"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_4mkg7"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="12_x5m43"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="13_q0yaw"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="14_v0hu6"]
+[ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="15_xs05q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4i60"]
 texture = ExtResource("5_res8x")
@@ -2277,6 +2278,17 @@ sources/2 = SubResource("TileSetAtlasSource_gwhgh")
 sources/3 = SubResource("TileSetAtlasSource_av56d")
 sources/5 = SubResource("TileSetAtlasSource_oytgb")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7m43h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5io3"]
+size = Vector2(762.5, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mol5p"]
+size = Vector2(50.5, 421.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iytqw"]
+size = Vector2(1052.25, 48)
+
 [node name="Node2" type="Node"]
 script = ExtResource("1_qupgw")
 
@@ -2418,3 +2430,26 @@ energy = 1.5
 shadow_enabled = true
 texture = ExtResource("4_bgtfy")
 texture_scale = 2.0
+
+[node name="RespawnPoint" type="Node2D" parent="."]
+position = Vector2(990, 501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RespawnPoint"]
+position = Vector2(79, 267)
+shape = SubResource("CapsuleShape2D_7m43h")
+
+[node name="DeadlyBlock" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("15_xs05q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(573.75, 642)
+shape = SubResource("RectangleShape2D_s5io3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(173, 453.125)
+shape = SubResource("RectangleShape2D_mol5p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]
+position = Vector2(575.875, 27)
+shape = SubResource("RectangleShape2D_iytqw")
