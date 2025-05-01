@@ -101,5 +101,11 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		}
 	}
 	
-	
+	public void RespawnAt(Vector2 position)
+	{
+		GlobalPosition = position;
+		Velocity = Vector2.Zero;
+		can_control = false;
+		GetTree().CreateTimer(0.5f).Timeout += () => { can_control = true; };
+	}
 }
