@@ -33,13 +33,14 @@ public partial class PradžiosLangas : Control
 	
 	public void _on_pradeti_pressed()
 	{
-		// Muziką sustabdom ir ištrinam
-		var music = GetTree().Root.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
-		if (music != null)
-		{
-			music.Stop();
-			music.QueueFree(); // pašalinam meniu muziką visiškai
-		}
+		MoveMusicToRoot();
+		//// Muziką sustabdom ir ištrinam
+		//var music = GetTree().Root.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
+		//if (music != null)
+		//{
+			//music.Stop();
+			//music.QueueFree(); // pašalinam meniu muziką visiškai
+		//}
 		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Istorijos_langas/IstorijosLangas.tscn");
 	}
 	

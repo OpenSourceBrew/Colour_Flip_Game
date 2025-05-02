@@ -651,19 +651,19 @@ size = Vector2(147.625, 50.125)
 size = Vector2(182.813, 47.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0674"]
-size = Vector2(85, 47.25)
+size = Vector2(53, 47.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oo5v"]
-size = Vector2(84, 51.625)
+size = Vector2(58, 51.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5sdp"]
-size = Vector2(86, 47.25)
+size = Vector2(59, 47.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tqim"]
 size = Vector2(46.5625, 479.828)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itpwv"]
-size = Vector2(85, 46.625)
+size = Vector2(53, 46.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbvci"]
 size = Vector2(53.5, 91.3125)
@@ -763,8 +763,12 @@ texture_filter = 1
 anchors_preset = -1
 anchor_left = 0.046875
 anchor_top = 0.115741
-anchor_right = 0.204861
-anchor_bottom = 0.226852
+anchor_right = 0.219618
+anchor_bottom = 0.245371
+offset_left = -8.0
+offset_top = -36.0002
+offset_right = -8.0
+offset_bottom = -36.0002
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -775,8 +779,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -29.9999
-offset_bottom = -11.9999
+offset_right = -34.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2, 1.2)
@@ -807,15 +811,15 @@ position = Vector2(622.594, 502)
 shape = SubResource("RectangleShape2D_jgleq")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(817.5, 501)
+position = Vector2(816.5, 501)
 shape = SubResource("RectangleShape2D_o0674")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(431, 503.188)
+position = Vector2(428, 503.188)
 shape = SubResource("RectangleShape2D_3oo5v")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(288, 501)
+position = Vector2(287.5, 501)
 shape = SubResource("RectangleShape2D_t5sdp")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="DeadlyBlock"]
@@ -831,7 +835,7 @@ position = Vector2(479.5, 213)
 shape = SubResource("RectangleShape2D_itpwv")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(624, 214)
+position = Vector2(621.5, 214)
 shape = SubResource("RectangleShape2D_itpwv")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="DeadlyBlock"]

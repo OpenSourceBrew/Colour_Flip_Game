@@ -9,11 +9,6 @@ public partial class Level1 : LevelBase
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		//backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level3_4.mp3");
-		//backgroundMusic.VolumeDb = 0;
-		//backgroundMusic.Play();
-		
 		// Pašalinam ankstesnę (meniu) muziką, jei liko
 		var oldMusic = GetTree().Root.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
 		if (oldMusic != null)
@@ -24,7 +19,7 @@ public partial class Level1 : LevelBase
 
 		// Paleidžiam naują muziką šiam lygiui
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level1_2.mp3");
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level3_4.mp3");
 		backgroundMusic.VolumeDb = 0;
 		backgroundMusic.Name = "BackgroundMusic";
 		backgroundMusic.Play();

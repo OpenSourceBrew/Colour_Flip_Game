@@ -3,17 +3,11 @@ using System;
 
 public partial class Level3 : LevelBase
 {
-	//private AudioStreamPlayer backgroundMusic;
 	private Label levelLabel;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		//backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level3_4.mp3");
-		//backgroundMusic.VolumeDb = 0;
-		//backgroundMusic.Play();
-		
 		var music = GetTree().Root.GetNodeOrNull<AudioStreamPlayer>("BackgroundMusic");
 		if (music != null && !music.Playing)
 		{

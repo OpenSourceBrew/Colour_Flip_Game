@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://c20lennlk4p0n"]
+[gd_scene load_steps=32 format=4 uid="uid://c20lennlk4p0n"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level10.cs" id="1_ftva1"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="1_i02ty"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://by0jedpho68a7" path="res://Blokai/pngwing.com.png" id="11_dym1b"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="12_lny4o"]
 [ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="14_dt07l"]
+[ext_resource type="PackedScene" uid="uid://ddixm1ali0eqb" path="res://Collectables/heart_collectable.tscn" id="15_7mvuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxafh"]
 texture = ExtResource("3_l8xjq")
@@ -669,7 +670,7 @@ size = Vector2(42.25, 46.625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1uc"]
 size = Vector2(287.875, 46.625)
 
-[node name="Node2" type="Node"]
+[node name="Node" type="Node"]
 script = ExtResource("1_ftva1")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
@@ -830,3 +831,7 @@ shape = SubResource("RectangleShape2D_gf6jw")
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="DeadlyBlock"]
 position = Vector2(961.063, 643)
 shape = SubResource("RectangleShape2D_mm1uc")
+
+[node name="Collectable" parent="." instance=ExtResource("15_7mvuw")]
+position = Vector2(839, 118)
+scale = Vector2(3, 3)

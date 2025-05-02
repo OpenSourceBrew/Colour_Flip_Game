@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsm8hcucxwpoa"]
+
+[ext_resource type="Script" path="res://Interaktyvūs_langai/Judantis_blokas/MovingBlock.cs" id="1_xt3sa"]
+[ext_resource type="Texture2D" uid="uid://c4tihm723xts4" path="res://Blokai/tile3.png" id="2_ctld4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y546x"]
+size = Vector2(167, 175)
+
+[node name="MovingBlock4" type="StaticBody2D"]
+script = ExtResource("1_xt3sa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4.5, 0)
+scale = Vector2(0.94375, 1)
+texture = ExtResource("2_ctld4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, -1.5)
+shape = SubResource("RectangleShape2D_y546x")

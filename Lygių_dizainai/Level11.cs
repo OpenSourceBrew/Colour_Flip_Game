@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Level9 : LevelBase
+public partial class Level11 : LevelBase
 {
 	private Label levelLabel;
 	
@@ -17,7 +17,7 @@ public partial class Level9 : LevelBase
 		levelLabel = GetNodeOrNull<Label>("UI/Panel/InfoLabel");
 		
 		var global = (GlobalState)GetNode("/root/GlobalState");
-		global.currentLevel = 9;
+		global.currentLevel = 11;
 		base._Ready();
 	}
 
