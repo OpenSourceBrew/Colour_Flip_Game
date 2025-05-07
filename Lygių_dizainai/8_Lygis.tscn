@@ -642,7 +642,7 @@ sources/2 = SubResource("TileSetAtlasSource_s8mb1")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8oarv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqjay"]
-size = Vector2(803.5, 47.25)
+size = Vector2(803.5, 46.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pegtb"]
 size = Vector2(147.625, 50.125)
@@ -799,7 +799,7 @@ collision_layer = 2
 script = ExtResource("14_osgol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(693, 25)
+position = Vector2(693, 24.6875)
 shape = SubResource("RectangleShape2D_mqjay")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]

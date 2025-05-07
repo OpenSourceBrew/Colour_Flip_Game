@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://5i02gsljjni"]
+[gd_scene load_steps=30 format=3 uid="uid://5i02gsljjni"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level7.cs" id="1_fkgek"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_x6v3c"]
@@ -140,7 +140,10 @@ size = Vector2(44, 38.625)
 size = Vector2(708, 45.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiipg"]
-size = Vector2(45.125, 46.625)
+size = Vector2(45.125, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lun60"]
+size = Vector2(45.125, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1v66"]
 size = Vector2(46.25, 144.313)
@@ -149,7 +152,7 @@ size = Vector2(46.25, 144.313)
 size = Vector2(46.25, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5i3v"]
-size = Vector2(384.5, 47)
+size = Vector2(384.5, 49.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_830th"]
 size = Vector2(44, 44)
@@ -347,7 +350,7 @@ position = Vector2(73, 597)
 shape = SubResource("RectangleShape2D_jiipg")
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(264, 356)
+position = Vector2(264, 360)
 shape = SubResource("RectangleShape2D_jiipg")
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="DeadlyBlock"]
@@ -355,8 +358,8 @@ position = Vector2(74.4375, 266)
 shape = SubResource("RectangleShape2D_jiipg")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(363, 357)
-shape = SubResource("RectangleShape2D_jiipg")
+position = Vector2(363, 359.5)
+shape = SubResource("RectangleShape2D_lun60")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="DeadlyBlock"]
 position = Vector2(604, 361.844)
@@ -383,7 +386,7 @@ position = Vector2(1034, 454)
 shape = SubResource("RectangleShape2D_jiipg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(289.75, 791)
+position = Vector2(290, 787.75)
 shape = SubResource("RectangleShape2D_o5i3v")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="DeadlyBlock"]
