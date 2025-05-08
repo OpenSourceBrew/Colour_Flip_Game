@@ -10,8 +10,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	private const float FRICTION = 1000.0f;
 	
 	private AnimatedSprite2D sprite2D;
-	private AudioStreamPlayer walkingAudio;
-	//private AudioStreamPlayer jumpingAudio;
 	private AudioStreamPlayer gravityAudio;
 	
 	private bool can_control = true;
@@ -20,8 +18,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	public override void _Ready()
 	{
 		sprite2D = GetNode<AnimatedSprite2D>("Sprite2D");
-		walkingAudio = GetNode<AudioStreamPlayer>("WalkingAudio");
-		//jumpingAudio = GetNode<AudioStreamPlayer>("JumpingAudio");
 		gravityAudio = GetNode<AudioStreamPlayer>("GravityAudio");
 	}
 
@@ -39,11 +35,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		((gravityDirection == 1 && IsOnFloor()) || (gravityDirection == -1 && IsOnCeiling())))
 		{
 			Velocity = new Vector2(Velocity.X, JUMP_VELOCITY * gravityDirection);
-			//// **Play walking sound only if not already playing**
-			//if (!jumpingAudio.Playing)
-			//{
-				//jumpingAudio.Play();
-			//}
 		}
 		
 		// Gravity Change
@@ -52,6 +43,7 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 			// **Play walking sound only if not already playing**
 			if (!gravityAudio.Playing)
 			{
+				gravityAudio.VolumeDb = -6;
 				gravityAudio.Play();
 			}
 			gravityDirection *= -1;
@@ -63,22 +55,10 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		if (direction != 0)
 		{
 			Velocity = new Vector2(direction * SPEED, Velocity.Y);
-			
-			// **Play walking sound only if not already playing**
-			if (!walkingAudio.Playing)
-			{
-				walkingAudio.Play();
-			}
 		}
 		else
 		{
 			Velocity = new Vector2(Mathf.MoveToward(Velocity.X, 0, FRICTION * (float)delta), Velocity.Y);
-			
-			// **Stop walking sound when idle**
-			if (walkingAudio.Playing)
-			{
-				walkingAudio.Stop();
-			}
 		}
 		
 		// **Call MoveAndSlide() Correctly**
@@ -87,10 +67,6 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 		sprite2D.FlipH = Velocity.X < 0;
 		
 		// **Corrected Animation Handling**
-		//if (!IsOnFloor()) // Character is in the air
-		//{
-			//sprite2D.Play("jumping");
-		//}
 		if (Math.Abs(Velocity.X) > 1) // Character is running
 		{
 			sprite2D.Play("walking");;
@@ -105,6 +81,9 @@ public partial class PagrindinisVeikėjas : CharacterBody2D
 	{
 		GlobalPosition = position;
 		Velocity = Vector2.Zero;
+		gravityDirection = 1;
+		sprite2D.FlipV = false;
+		sprite2D.Play("default");
 		can_control = false;
 		GetTree().CreateTimer(0.5f).Timeout += () => { can_control = true; };
 	}

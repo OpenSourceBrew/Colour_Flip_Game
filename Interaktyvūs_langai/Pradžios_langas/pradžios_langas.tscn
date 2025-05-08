@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="1_ew1l4"]
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Pradžios_langas/PradžiosLangas.cs" id="1_q1dyw"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="2_fs3mq"]
-[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_cqawt"]
+[ext_resource type="AudioStream" uid="uid://buj66yq3oayrg" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_3d6tf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phddv"]
 texture = ExtResource("1_ew1l4")
@@ -139,12 +139,12 @@ theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
 theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
 theme_override_fonts/font = ExtResource("2_fs3mq")
 theme_override_font_sizes/font_size = 60
-text = "Colour Flip Game"
+text = "Colour Flip"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_cqawt")
+stream = ExtResource("4_3d6tf")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_pradeti_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_nustatymai_pressed"]

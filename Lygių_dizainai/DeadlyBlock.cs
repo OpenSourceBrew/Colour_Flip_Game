@@ -3,9 +3,11 @@ using System;
 
 public partial class DeadlyBlock : Area2D
 {
+	private AudioStreamPlayer deathAudio;
 	public override void _Ready()
 	{
 		Connect("body_entered", new Callable(this, nameof(_on_deadly_block_body_entered)));
+		
 	}
 
 	private void _on_deadly_block_body_entered(Node body)
@@ -14,10 +16,18 @@ public partial class DeadlyBlock : Area2D
 		{
 			var global = (GlobalState)GetNode("/root/GlobalState");
 			global.lives -= 1;
+			
+			deathAudio = GetNode<AudioStreamPlayer>("DeathAudio");
+			deathAudio.Stream = GD.Load<AudioStream>("res://Muzika/Garso_efektai/hit01.wav");
+			deathAudio.VolumeDb = -6;
+			deathAudio.Play();
+			
 			if (global.lives < 0)
+			{
 				global.lives = 0;
-
-			// ----->>>>>> Čia pridedame UI atnaujinimą
+			}
+			
+			// Čia pridedame UI atnaujinimą
 			var levelBase = GetTree().CurrentScene as LevelBase;
 			if (levelBase != null)
 			{
@@ -38,8 +48,12 @@ public partial class DeadlyBlock : Area2D
 			// Jei gyvybių nebeliko — galima daryti Game Over langą
 			if (global.lives <= 0)
 			{
-				GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Mirties_langas/Mirties_Langas.tscn");
+				CallDeferred(nameof(KeistiScena));
 			}
 		}
+	}
+	private void KeistiScena()
+	{
+		GetTree().ChangeSceneToFile("res://Interaktyvūs_langai/Mirties_langas/mirties_langas.tscn");
 	}
 }

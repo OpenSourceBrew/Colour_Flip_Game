@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1psfr5lh7m5x"]
+[gd_scene load_steps=11 format=3 uid="uid://d1psfr5lh7m5x"]
 
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Mirties_langas/MirtiesLangas.cs" id="1_a71bi"]
 [ext_resource type="Shader" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.gdshader" id="1_ejh52"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="2_bilau"]
+[ext_resource type="AudioStream" uid="uid://hrde7drtvyfj" path="res://Muzika/Foninė_muzika/death_audio.mp3" id="4_0pyni"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rvo7l"]
 shader = ExtResource("1_ejh52")
@@ -103,7 +104,7 @@ text = "Tu mirei!
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="PradetiIsNaujo" type="Button" parent="PanelContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
@@ -117,9 +118,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_vkk16")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i0s8r")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j10ut")
 theme_override_styles/normal = SubResource("StyleBoxFlat_e8kab")
-text = "Prdėti iš naujo"
+text = "Pradėti iš naujo"
 
-[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="GriztiIMeniu" type="Button" parent="PanelContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
@@ -133,9 +134,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_vkk16")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i0s8r")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j10ut")
 theme_override_styles/normal = SubResource("StyleBoxFlat_e8kab")
-text = "Grįžti į meniu
+text = "Grįžti į pagrindinį meniu
 "
 script = SubResource("CSharpScript_1fx7e")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_pradeti_is_naujo_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Button3" to="." method="_on_grizti_i_meniu_pressed"]
+[node name="DeathMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0pyni")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PradetiIsNaujo" to="." method="_on_pradeti_is_naujo_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/GriztiIMeniu" to="." method="_on_grizti_i_meniu_pressed"]

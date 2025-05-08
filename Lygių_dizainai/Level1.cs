@@ -14,13 +14,14 @@ public partial class Level1 : LevelBase
 		if (oldMusic != null)
 		{
 			oldMusic.Stop();
-			oldMusic.QueueFree(); // pašalinam seną muziką (menu)
+			oldMusic.QueueFree();
 		}
 
 		// Paleidžiam naują muziką šiam lygiui
 		backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/music_level3_4.mp3");
-		backgroundMusic.VolumeDb = 0;
+		backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/main_music.mp3");
+		backgroundMusic.VolumeDb = -6;
+		backgroundMusic.PitchScale = 0.90f;
 		backgroundMusic.Name = "BackgroundMusic";
 		backgroundMusic.Play();
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Interaktyvūs_langai/Istorijos_langas/IstorijosLangas.cs" id="1_o77nm"]
 [ext_resource type="Texture2D" uid="uid://er72eagm33xd" path="res://Fonas/background 5.png" id="2_7nths"]
 [ext_resource type="FontFile" uid="uid://b3l7h1ldoqn0j" path="res://Šriftai/CheeseOrange-Regular.ttf" id="3_d41aw"]
-[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/menu_music.mp3" id="4_44jrh"]
+[ext_resource type="AudioStream" uid="uid://dilqvca1e124x" path="res://Muzika/Foninė_muzika/main_music.mp3" id="4_44jrh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4dis"]
 texture = ExtResource("2_7nths")
@@ -77,7 +77,7 @@ theme_override_colors/font_color = Color(0.397381, 0.629317, 0.987992, 0.964706)
 theme_override_colors/font_shadow_color = Color(0.744624, 1, 0.995781, 1)
 theme_override_fonts/font = ExtResource("3_d41aw")
 theme_override_font_sizes/font_size = 60
-text = "Žadimo istorija"
+text = "Žaidimo istorija"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -100,8 +100,8 @@ text = "Kadaise gyveno Pelėdukas.
 
 Pelėdukas eidamas namo nusprendė nueiti greitesniu keliu - pro mišką. 
 
-Tačiau, Pelėdukas, nežinodamas miško pavojų, įkrito į didžiulę skylę!
-Ta skylė buvo įėjimas į senai pamirštus ir apleistus urvus.
+Tačiau Pelėdukas, nežinodamas miško pavojų, įkrito į didelę olą!
+Ta ola buvo įėjimas į senai pamirštus ir apleistus urvus.
 
 Dabar Pelėdukas turi surasti išėjimą iš šių urvų su tavo pagalba!"
 

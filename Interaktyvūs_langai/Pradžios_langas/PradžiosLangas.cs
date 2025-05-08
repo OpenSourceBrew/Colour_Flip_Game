@@ -13,7 +13,7 @@ public partial class PradžiosLangas : Control
 		{
 			backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
 			backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/menu_music.mp3");
-			backgroundMusic.VolumeDb = -6; // Galima pareguliuoti garsą
+			backgroundMusic.VolumeDb = -16; // Galima pareguliuoti garsą
 			backgroundMusic.Name = "BackgroundMusic";
 			backgroundMusic.Play();
 		}
@@ -21,10 +21,6 @@ public partial class PradžiosLangas : Control
 		{
 			backgroundMusic = existingMusic;
 		}
-		
-		//backgroundMusic = GetNode<AudioStreamPlayer>("BackgroundMusic");
-		//backgroundMusic.Stream = GD.Load<AudioStream>("res://Muzika/Foninė_muzika/menu_music.mp3");
-		//backgroundMusic.Play();
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

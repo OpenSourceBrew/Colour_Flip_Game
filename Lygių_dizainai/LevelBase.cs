@@ -34,18 +34,18 @@ public partial class LevelBase : Node
 	{
 		var global = (GlobalState)GetNode("/root/GlobalState");
 		global.lives += value;
+		if(global.lives > global.maxLives)
+		{
+			global.lives = global.maxLives;
+		}
 		UpdateInfoLabel();
 	}
 	public void DecreaseLives(int value)
 	{
 		var global = (GlobalState)GetNode("/root/GlobalState");
+		
 		global.lives -= value;
 		if (global.lives < 0) global.lives = 0;
 		UpdateInfoLabel();
-		////if (global.lives == 0)
-		////{
-			////GD.Print("Game Over!");
-			////// Čia gali restartuoti lygį arba grąžinti į meniu
-		////}
 	}
 }

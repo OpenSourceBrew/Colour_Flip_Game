@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bhfgw7yg5rrmb"]
+[gd_scene load_steps=25 format=4 uid="uid://bhfgw7yg5rrmb"]
 
 [ext_resource type="Script" path="res://Lygių_dizainai/Level12.cs" id="1_qupgw"]
 [ext_resource type="AudioStream" uid="uid://db5r8t4clvax4" path="res://Muzika/Foninė_muzika/music_level1_2.mp3" id="2_4mkg7"]
@@ -9,10 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://uj6n4mg4yoxg" path="res://Blokai/Terrain (16x16).png" id="7_hdxrf"]
 [ext_resource type="Texture2D" uid="uid://b8y6vycmj7dur" path="res://Blokai/caveTiles.png" id="8_7bobm"]
 [ext_resource type="PackedScene" uid="uid://c1vp6autpitw6" path="res://Veikėjas/pagrindinis_veikėjas.tscn" id="9_aj436"]
-[ext_resource type="AudioStream" uid="uid://c6n54p6p30heg" path="res://Muzika/Garso_efektai/concrete-footsteps-6752.mp3" id="10_qpygy"]
-[ext_resource type="AudioStream" uid="uid://d6aka2y0msbv" path="res://Muzika/Garso_efektai/zapsplat_foley_footstep_single_foot_land_from_jump_on_wall_stone_001_111405.mp3" id="11_2wnk4"]
 [ext_resource type="AudioStream" uid="uid://cyguyhjp5beed" path="res://Muzika/Garso_efektai/zapsplat_sound_design_whoosh_noisy_wind_fast_002_88850.mp3" id="12_x5m43"]
 [ext_resource type="PackedScene" uid="uid://b1uiahwry0q45" path="res://Interaktyvūs_langai/Pauzės_langas/pauzės_langas.tscn" id="13_q0yaw"]
+[ext_resource type="AudioStream" uid="uid://clfscggpyvbp0" path="res://Muzika/Garso_efektai/hit01.wav" id="14_26n0p"]
 [ext_resource type="PackedScene" uid="uid://b55l5h6pxn2qm" path="res://Portalas/Portal.tscn" id="14_v0hu6"]
 [ext_resource type="Script" path="res://Lygių_dizainai/DeadlyBlock.cs" id="15_xs05q"]
 [ext_resource type="PackedScene" uid="uid://bsm8hcucxwpoa" path="res://Interaktyvūs_langai/Judantis_blokas/MovingBlock4.tscn" id="16_o3h50"]
@@ -2282,19 +2281,20 @@ sources/5 = SubResource("TileSetAtlasSource_oytgb")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7m43h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5io3"]
-size = Vector2(762.5, 40)
+size = Vector2(762.5, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mol5p"]
-size = Vector2(43.25, 421.75)
+size = Vector2(48.25, 421.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iytqw"]
-size = Vector2(1052.25, 48)
+size = Vector2(1052.25, 51)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_qupgw")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4mkg7")
+pitch_scale = 0.9
 parameters/looping = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -2329,15 +2329,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 1175
 limit_bottom = 650
-
-[node name="WalkingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("10_qpygy")
-pitch_scale = 0.7
-autoplay = true
-parameters/looping = true
-
-[node name="JumpingAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
-stream = ExtResource("11_2wnk4")
 
 [node name="GravityAudio" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("12_x5m43")
@@ -2415,16 +2406,19 @@ collision_layer = 2
 script = ExtResource("15_xs05q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(573.75, 646)
+position = Vector2(573.75, 643.5)
 shape = SubResource("RectangleShape2D_s5io3")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(169.375, 453.125)
+position = Vector2(171.875, 453.125)
 shape = SubResource("RectangleShape2D_mol5p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DeadlyBlock"]
-position = Vector2(575.875, 27)
+position = Vector2(575.875, 28.5)
 shape = SubResource("RectangleShape2D_iytqw")
+
+[node name="DeathAudio" type="AudioStreamPlayer" parent="DeadlyBlock"]
+stream = ExtResource("14_26n0p")
 
 [node name="MovingBlock4" parent="." instance=ExtResource("16_o3h50")]
 position = Vector2(303, 256)
