@@ -87,18 +87,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.5
-offset_top = -104.0
-offset_right = 179.5
-offset_bottom = 104.0
+offset_left = -232.0
+offset_top = -113.0
+offset_right = 241.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_7ksj8")
 theme_override_font_sizes/normal_font_size = 27
-text = "Pašokti - rodyklė up arba space
-Eiti į priekį - rodyklė right
-Eiti atgal - rodyklė left
-Pakeisti gravitaciją - enter
+text = "Eiti į priekį - rodyklė \"→\" arba \"D\"
+Eiti atgal - rodyklė \"←\" arba \"A\"
+Pašokti - rodyklė \"↑\" arba \"Space\"
+Pakeisti gravitaciją - \"Shift\" arba \"Enter\"
 
 "
 
